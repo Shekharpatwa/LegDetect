@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1170px){
+
+
+div.signin {
+    margin-right: 41px;
+    margin-left:5px;
+    margin-top: 4rem;
+    overflow: hidden;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 60px 35px rgb(0 0 0 / 10%);
+}
+
+
+div.login{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 8rem;
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+}

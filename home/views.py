@@ -74,6 +74,7 @@ def handleLogin(request):
     		login(request, user)
 			messages.success(request, "Successfully Logged In")
 			return redirect('Homepage')
+
 	else:
     	messages.error(request, "Invalid credentials, Please try again")
 		return redirect('GenuVarum')

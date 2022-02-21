@@ -1,0 +1,358 @@
+# this is a test file
+
+
+
+	# if request.method == "POST":
+	# 	username = request.POST.get('username')
+	# 	email = request.POST.get('email')
+	# 	user = request.POST.get('user')
+	# 	password = request.POST.get('password')
+
+	# 	if len(username)<2 or len(email)<3:
+	# 		messages.error(request, "Please fill the form correctly")
+	# 	else:
+	# 		sign = SignIn(username=username, email=email, user=user,password=password, date=datetime.today())
+	# 		sign.save()
+	# 		messages.success(request, 'Sign In Successfully')
+
+	# return render(request, 'Signin.html')
+
+		#Get the parameters
+	# if request.method == "POST":
+	# 	username = request.POST['username']
+	# 	email = request.POST['email']
+	# 	user = request.POST['user']
+	# 	password = request.POST['password']
+	# 	cpassword = request.POST['cpassword']
+
+	# 	#Check for errorneous inputs
+
+	# 	#Username must be under 10 character
+	# 	if len(username) > 10:
+	# 		messages.error(request, 'Username must be under 10 character')
+	# 		return redirect('Signin')
+		
+	# 	#Username should be alphanumeric
+	# 	if not username.isalnum():
+	# 		messages.error(request, 'Username should only contain letters and numbers')
+	# 		return redirect('Signin')
+		
+	# 	#password should match
+	# 	if password != cpassword:
+	# 		messages.error(request, 'Paasword do not match')
+	# 		return redirect('Signin')
+		
+
+
+		#Create the User
+	# 	myuser = User.objects.create_user(username, email,user , password)
+	# 	myuser.save()
+	# 	messages.success(request, 'Your account has been successfully created')
+	# 	return redirect('Homepage')
+
+	# else:
+	# 	return HttpResponse('404 - Not found')
+
+# def handleSignup():
+	#Get the parameters
+	# if request.method == "POST":
+	# 	username = request.POST['username']
+	# 	email = request.POST['email']
+	# 	user = request.POST['user']
+	# 	password = request.POST['password']
+
+	# 	#Check for errorneous inputs
+
+	# 	#Username must be under 10 character
+	# 	if len(username) > 10:
+	# 		messages.error(request, 'Username must be under 10 character')
+	# 		return redirect('Signin')
+		
+	# 	#Username should be alphanumeric
+	# 	if not username.isalnum():
+	# 		messages.error(request, 'Username should only contain letters and numbers')
+	# 		return redirect('Signin')
+		
+	# 	#password should match
+	# 	if password != cpassword:
+	# 		messages.error(request, 'Paasword do not match')
+	# 		return redirect('Signin')
+		
+
+
+	# 	#Create the User
+	# 	myuser = User.objects.create_user(username, email,user , password)
+	# 	myuser.save()
+	# 	messages.success(request, 'Your account has been successfully created')
+	# 	return redirect('Homepage')
+
+	# else:
+	# 	return HttpResponse('404 - Not found')
+
+
+
+
+
+
+########3---------------------------------------------
+########################3----------------------------
+#    SIGN AND LOGIN PAGE  VIEWS 
+
+
+
+# def Signin(request):
+	# form = CreateUserForm()
+
+	# if reqeust.method =='POST':
+	# 	form = CreateUserForm(request.POST)
+	# 	if form.is_valid():
+	# 		form.save()
+
+	# context = {'form':form}
+	# return render(request, 'Signin.html')
+
+# def Login(request):
+# 	context = {}
+# 	return render(request,"Login.html ",context)
+
+# 	if request.method == "POST":
+# 		loginemail = request.POST['loginemail']
+# 		loginpassword = request.POST['loginpassword']
+
+# 	return HttpResponse('Login')
+
+# def handleLogout(request):
+# 	return HttpResponse("Logout")
+
+
+# <form method="post" action="/Signin">
+#                 {% csrf_token %}
+#                 <h1>Sign In</h1>
+#                   <div class="mb-3">
+#                     <label class="form-label"  class="form-label" for="name">Username: </label>
+#                     <input class="form-control" type="text" id="username" name="username" placeholder="Enter username" required />
+#                   </div>
+
+#                   <div class="mb-3">
+#                     <label class="form-label">Email: </label>
+#                     <input class="form-control" type="email" id="email" name="email" placeholder="Enter email address" required />
+#                   </div>
+                  
+#                   <div class="mb-3">
+#                     <label class="form-label">Sign as: </label>
+#                     <select class="form-control" name="user" id="user" required>
+#                         <option value="none" selected disabled hidden>Select</option>  
+#                         <option type="radio" value="User" name="user">User</option>
+#                         <option type="radio" value="doctor" name="doctor">Doctor</option> 
+#                     </select>
+#                   </div>
+                
+#                   <div class="mb-3">
+#                     <label class="form-label"> Password: </label>
+#                     <input class="form-control" type="password" id="password" name="password" placeholder="Enter password" required/>
+#                   </div>
+
+#                   <div class="mb-3">
+#                     <label class="form-label">Confirm Password: </label>
+#                     <input class="form-control" type="password" id="cpassword" name="cpassword" placeholder="Enter password" required/>
+#                   </div>
+                
+#                 <button type="submit" id="btnSubmit" href="/Login" > Sign In </button> 
+#                 <a href="/Login">Already Sign In?</a>
+                
+#             </form>
+
+
+
+
+
+
+
+
+
+
+
+# def Signin(request):
+	# form = CreateUserForm()
+
+	# if reqeust.method =='POST':
+	# 	form = CreateUserForm(request.POST)
+	# 	if form.is_valid():
+	# 		form.save()
+
+	# context = {'form':form}
+	# return render(request, 'Signin.html')
+
+# def Login(request):
+# 	context = {}
+# 	return render(request,"Login.html ",context)
+
+# 	if request.method == "POST":
+# 		loginemail = request.POST['loginemail']
+# 		loginpassword = request.POST['loginpassword']
+
+# 	return HttpResponse('Login')
+
+# def handleLogout(request):
+# 	return HttpResponse("Logout")
+
+
+
+# <style>
+
+#     .gvalgum{
+#         background:-webkit-linear-gradient(left, #12cc12, #2f86ce);
+#     }
+#     .table{
+#         background-color:aliceblue;
+#     }
+#     th, td{
+#         border: 2px solid blue;
+#         border-radius: 10px;
+#       }
+#       .name{
+#         color: #16a321;
+#       }
+#       thead, tbody{
+#           font-size: larger;
+#       }
+    
+# </style> 
+
+
+
+
+
+####Tried codes in "views.py"
+
+
+# def Login(request):
+# 	return render(request,'Login.html')
+
+# def handleLogout(request):
+# 	logout(request)
+# 	messages.success(request, "successfully Logged Out")		
+# 	return redirect('Homepage')
+	
+# 	return HttpResponse('handleLogout')
+
+# def Signup(request):
+# 	 # check if the request is post
+#     if request.method =='POST': 
+ 
+#         # Pass the form data to the form class
+#         details = PostForm(request.POST)
+ 
+#         # In the 'form' class the clean function
+#         # is defined, if all the data is correct
+#         # as per the clean function, it returns true
+#         if details.is_valid(): 
+ 
+#             # Temporarily make an object to be add some
+#             # logic into the data if there is such a need
+#             # before writing to the database  
+#             post = details.save(commit = False)
+ 
+#             # Finally write the changes into database
+#             post.save() 
+ 
+#             # redirect it to some another page indicating data
+#             # was inserted successfully
+#             return HttpResponse("data submitted successfully")
+             
+#         else:
+         
+#             # Redirect back to the same page if the data
+#             # was invalid
+#             return render(request, "home.html", {'form':details}) 
+#     else:
+ 
+#         # If the request is a GET request then,
+#         # create an empty form object and
+#         # render it into the page
+#         form = CreateSignForm()(None)  
+#         return render(request, 'Homepage.html', {'form':form})
+
+
+# def Signup(request):
+# 	form = CreateUserForm()
+
+# 	if reqeust.method =='POST':
+# 		form = CreateUserForm(request.POST)
+# 		if form.is_valid():
+# 			form.save()
+
+# 	context = {'form':form}
+# 	return render(request, 'Signup.html')
+
+# def Signup(request):
+
+#  	return render(request,'Signup.html')
+
+
+# def PasswordResetView(request):
+# 	return render(request,'password_reset.html')
+
+# def PasswordResetDoneView(request):
+# 	return render(request,'password_reset_sent.html')
+
+# def PasswordResetConfirmView(request):
+# 	return render(request,'password_reset_form.html')
+
+# def PasswordResetCompleteView(request):
+# 	return render(request,'password_reset_done.html')
+
+
+
+
+# ftoken = str(uuid.uuid4())
+		# profile = Profile.objects.create(user=user,forgot_password_token=ftoken)
+
+
+## Video of Genu Valgum of home exercise'
+# Website taken from -->   https://www.physiotherapy-treatment.com/genu-valgum.html
+#         https://www.youtube.com/embed/TRCx7_waDsA
+#         https://www.youtube.com/embed/85gA9a4AHh4
+#		  https://www.youtube.com/embed/T9I62pLgwXQ
+
+
+# <iframe width="560" height="315" src="https://www.youtube.com/embed/85gA9a4AHh4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+# <iframe width="560" height="315" src="https://www.youtube.com/embed/TRCx7_waDsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+# <iframe width="560" height="315" src="https://www.youtube.com/embed/T9I62pLgwXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# def handleSignup(request):
+#     	# Get the POST parameters
+# 	if request.method == "POST":
+# 		username = request.POST['username']
+# 		email = request.POST['email']
+# 		password = request.POST['password']
+# 		cpassword = request.POST['cpassword']
+	
+# 		#Check for errorneous inputs
+
+# 		#Username must be under 10 character
+# 		if len(username) > 10:
+# 			messages.error(request, 'Username must be under 10 character')
+# 			return redirect('Homepage')
+		
+# 		#Username should be alphanumeric
+# 		if not username.isalnum():
+# 			messages.error(request, 'Username should only contain letters and numbers')
+# 			return redirect('Homepage')
+			
+# 		#password should match
+# 		if password != cpassword:
+# 			messages.error(request, 'Paaswords do not match')
+# 			return redirect('Homepage')
+			
+
+# 		#Create the User
+# 		myuser = User.objects.create_user(username,email,password)
+# 		# myuser.first_name = fname
+# 		myuser.save()
+# 		messages.success(request, 'Your account has been succespyhsfully created')
+# 		# return redirect('Homepage')
+# 		return redirect('GenuValgum')
+
+# 	else:
+# 		return HttpResponse('404 - Not found')
