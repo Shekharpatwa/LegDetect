@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'bodydet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Project_LegDetect',
+        'NAME': 'LegDetect_Project',
     }
 }
 
@@ -176,3 +176,12 @@ MESSAGE_TAGS = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#EMAIL SMTP
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shekharpatwa2001@gmail.com'
+EMAIL_HOST_PASSWORD = 'patwa@1201'

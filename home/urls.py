@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from home import views
+from .import views
 
 urlpatterns = [
     path('', views.Homepage, name='Homepage'),
@@ -25,5 +26,9 @@ urlpatterns = [
     path('login',views.handleLogin, name='handleLogin'),
     path('logout',views.handleLogout, name='handleLogout'),
 
-
+    # Forget and change password urls 
+    path('changepass/<str:id>/',views.changepassword,name="changepassword"),
+    path('forgetpassword/',views.fpass,name='fpass')
 ]
+
+
