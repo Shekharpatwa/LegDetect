@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Your Profile {% endblock title %}
+{%load static%}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<div class="container">
+
+    {% if user.is_authenticated %}
+        <div class="container">    
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Username:</b></label>
+                <label for="email" class="form-label">{{user.username}}</label>
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Email address:</b></label>
+                <label for="email" class="form-label">{{user.email}}</label>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Deformity through image detection</b></label>
+                <label for="email" class="form-label">{{user.Deformity_Res_Img1}} {{user.Deformity_Res_Img2}} </label>
+            </div>
+
+            {% comment %} <div class="mb-3">
+                <label for="email" class="form-label"><b>Deformity Result:</b></label>
+                <label for="email" class="form-label">{{user.Deformity_Res}}</label>
+            </div> {% endcomment %}
+        </div>
+    {% endif %}
+
+</div>
+ 
+
+{% endblock body %}
+

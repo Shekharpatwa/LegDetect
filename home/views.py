@@ -1,17 +1,22 @@
 from django.shortcuts import render, HttpResponse,redirect
 from django.http.response import StreamingHttpResponse
-from home.frameoperations import FrameOperations
-from home.poseEstimator import PoseEstimator
+
 from home.camera import VideoImgManager
+from home.body_detect import VideoImgManagers
 from datetime import datetime
 from django.contrib.auth import authenticate, login, logout	
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .models import liveResult
+from .models import imageResult
+from datetime import datetime
 
 from django.conf import settings
 from django.core.mail import send_mail
 import uuid
 from .models import Profile
+
+import cv2 as cv
 
 # Create your views here.
 
@@ -30,12 +35,11 @@ def TreatmentValgum(request):
 def TreatmentVarum(request):
     return render(request,'TreatmentVarum.html')
 
-def Detection(request):
-	if request.user.is_anonymous:
-		return redirect(request,'/Login')
-	return render(request,'Detection.html')
+def Detection_Live(request):
+	return render(request,'Detection_Live.html')
 
-
+# def Detection_img(request):
+#     return render(request,'Detection_img.html')
 
 def handleSignup(request):
 	# Get the POST parameters
@@ -62,17 +66,30 @@ def handleSignup(request):
 			messages.error(request, 'Passwords do not match')
 			return redirect('Homepage')
 			
+		# data=User.objects.all()
+		# z=0
+		# for i in data:
+    	# 	if i.email==email:
+    	# 		z=1
+		# 		break
+		# if z==1:
+    	# 	return render(request,"Homepage.html",{"Variable":"Email id already exists"})
 
-		#Create the User
+		# #Create the User
 		myuser = User.objects.create_user(username,email,pass1)
 		# myuser.first_name = fname
-		myuser.save()
+		
 
+		myuser.save()
+		
+		# ftoken = str(uuid.uuid4())
+		
+		# profile = Profile.objects.create(user=user,forget_token=ftoken)
+		
 		messages.success(request, 'Your account has been successfully created')
 
-		ftoken = str(uuid.uuid4())
-
-		profile = Profile.objects.create(user=user,forget_token=ftoken)
+		
+		
 
 		# return redirect('Homepage')
 		return redirect('GenuValgum')
@@ -89,7 +106,8 @@ def handleLogin(request):
 		loginpassword = request.POST['loginpassword']
 		
 		user = authenticate(username=loginusername, password=loginpassword)
-	
+		
+
 		if user is not None:
 			login(request, user)
 			messages.success(request, "Successfully Logged In")
@@ -97,6 +115,7 @@ def handleLogin(request):
 
 	else:
 		messages.error(request, "Invalid credentials, Please try again")
+		print(messages.error(request, "Invalid credentials, Please try again"))
 		return redirect('GenuVarum')
 
 	# return HttpResponse('handleLogin')
@@ -114,6 +133,9 @@ def handleLogout(request):
 	# logout(request)
 	# return HttpResponseRedirect('Homepage')
 
+# def UserProfile(request):
+#     return render(request,'UserProfile.html')
+
 
 #Forget password
 def fpass(request):
@@ -130,7 +152,7 @@ def fpass(request):
         messages.success(request,'MAIL SEND')
     return render(request,'forgetpassword.html')
 
-#Change Password
+# #Change Password
 def changepassword(request,id):
     if request.method == 'POST':
         password = request.POST['password']
@@ -148,15 +170,49 @@ def gen(camera):
 		yield (b'--frame\r\n'
 				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-def frame_feed(request):
-	return StreamingHttpResponse(gen(FrameOperations()),
-					content_type='multipart/x-mixed-replace; boundary=frame')
-
-def pose_feed(request):
-	return StreamingHttpResponse(gen(PoseEstimator()),
-					content_type='multipart/x-mixed-replace; boundary=frame')
-
 
 def video_feed(request):
 	return StreamingHttpResponse(gen(VideoImgManager()),
 					content_type='multipart/x-mixed-replace; boundary=frame')
+
+
+
+def image_det(body_detect):
+	while True:
+		frame = body_detect.estimate_vid()
+		yield (b'--frame\r\n'
+				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+		if cv.waitKey(5000) :break
+			
+
+def image_feed(request):
+	return StreamingHttpResponse(image_det(VideoImgManagers()),
+					content_type='multipart/x-mixed-replace; boundary=frame')
+
+					
+# def live_Res(request):
+#     if request.method == 'POST':
+#     	username = request.POST.get('username')
+# 	   	LiveRes1 = request.POST.get('LiveRes1')
+# 	   	LiveRes2 = request.POST.get('LiveRes2')
+# 	   	live_Res = liveResult(user=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
+# 	   	live_Res.save()
+    
+#     return render(request, 'Detection_Live.html')  
+
+def Detection_img(request):
+	if request.method == "POST":
+		username = request.POST['username']
+		imgRes1 = request.POST['imgRes1']
+		imgRes2 = request.POST['imgRes2']
+		print(imgRes1,imgRes2)
+		
+		img_Result = imageResult(user=username,imgRes1=imgRes1,imgRes2=imgRes2,date=datetime.today())
+		img_Result.save()
+		messages.success(request,'Stored successfully') 
+	
+	return render(request, 'Detection_img.html') 
+ 
+
+def Hospitals(request):
+	return render(request,'Hospitals.html')

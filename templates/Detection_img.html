@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %} Photo Detection {% endblock title %}
+{% load static%}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+<h1 style="text-align: center;">Body DETECTION By Taking Photo Using Webcam</h1>
+<div style="justify-content: center; display: flex; margin-top: 30px;"><img src="{% url 'image_feed' %}">
+</div>
+<div class="container detectform">
+    <h2>For Detection fill the details </h2>
+    <form method="POST" action="Detection_img">
+        {% csrf_token %}
+
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert">
+          <strong>Message </strong> {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+
+        <div class="mb-3">
+            <label class="form-label" for="username">Username: </label>
+            <input class="form-control" type="text" id="username" name="username" placeholder="Enter username" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="Langle">Left Leg angle: </label>
+            <input class="form-control" type="number" id="Langle" name="Langle" placeholder="Enter left leg angle" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="Rangle">Right Leg angle: </label>
+            <input class="form-control" type="number" id="Rangle" name="Rangle" placeholder="Enter Right leg angle" required />
+        </div>
+        <div>
+            <b> Enter Date of Birth: <input type="date" id = "DOB" required/> </b>  
+            <span id = "message" style="color:red"> </span> <br><br>  
+        </div>  
+  
+        <button type="submit" name="submit" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary"> Predict </button>
+
+        <span name="imgRes1" id="imgRes1"></span>
+
+        <span name="imgRes2" id="imgRes2"></span>
+
+    </form>
+</div>
+
+<script>
+    var btn1 = document.getElementById("btn1");
+    btn1.addEventListener("click",e=>{
+        e.preventDefault();
+        var l = Number(document.getElementById("Langle").value);
+        var r = Number(document.getElementById("Rangle").value);
+
+        if((l && r) < 175)
+        {
+            document.getElementById("imgRes1").innerHTML = "Knock Knee is Present And"
+        }
+        else if((l && r) > 190)
+        {
+            document.getElementById("imgRes1").innerHTML = "Bowleg is Present And"
+        }
+        else
+        {
+            document.getElementById("imgRes1").innerHTML = "No Deformity is Present"
+
+        }
+       
+    })
+    function ageCalculator() { 
+        var l = Number(document.getElementById("Langle").value);
+        var r = Number(document.getElementById("Rangle").value); 
+        var userinput = document.getElementById("DOB").value;  
+        var dob = new Date(userinput);  
+        if(userinput==null || userinput=='') {  
+          document.getElementById("message").innerHTML = "**Choose a date please!";    
+          return false;   
+        } else {  
+          
+        //calculate month difference from current date in time  
+        var month_diff = Date.now() - dob.getTime();  
+          
+        //convert the calculated difference in date format  
+        var age_dt = new Date(month_diff);   
+          
+        //extract year from date      
+        var year = age_dt.getUTCFullYear();  
+          
+        //now calculate the age of the user  
+        var age = Math.abs(year - 1970);  
+          
+        //display the calculated age 
+        if(((age <= 2) && ((l && r)> 190)))
+        {
+            return document.getElementById("imgRes2").innerHTML = " Its Normal in this age and will be fix by itself"
+        }
+        else if (((age <= 2) && ((l && r)< 175)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age"
+        }
+        else if (((2 < age) && (7 >= age)  && ((l && r)> 190)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor"
+        }
+        else if (((2 < age) && (7 >= age)  && ((l && r)< 175)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Normal in this age and will be fix by itself" 
+        }
+        else if (((7 < age) && (13 >= age) && ((l && r)> 190)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor and can be cured by doing some exercise or by minor surgey"
+        }
+        else if (((7 < age) && (13 >= age) && ((l && r)< 175)))
+        {
+        return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor and can be cured by doing some exercise or by minor surgey"  
+        }
+        else if (((13 < age) && (18 >= age) && ((l && r)> 190)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor"  
+        }
+        else if (((13 < age) && (18 >= age) && ((l && r)< 175)))
+        {
+            return document.getElementById("imgRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor"  
+        }
+                
+        }  
+    }  
+</script>
+
+{% endblock body %}

@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}Genu Varum {% endblock title %}
-
+{% load static%}
 {% block body %}
 
-<div class="varumtreat">
-    <div class="varumtreatcont1">
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="container varumtreat">
+    <div class=" varumtreatcont1">
         <h1> Genu Varum</h1>
         <p>
             Bow legs develop for a number of different reasons. The most common cause of bow legs is a condition called physiologic genu varum.

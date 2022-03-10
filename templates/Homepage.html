@@ -5,26 +5,17 @@
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-<div class="container-fluid px-0">
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="container">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active ">
-        <img src="{% static 'genu-valgum.jpg'%}" height="600"  class="d-block w-100 homeimg" alt="genu valgum">
-        <div class="carousel-caption d-none d-md-block">
-            <h5 class="heading">Genu Valgum 1</h5>
-          </div>
+      <div class="carousel-item active">
+        <img src="{%static 'Homeimg1.jpg'%}" class="d-block w-100 height1" alt="Homeimg1">
       </div>
+      {% comment %} <div class="carousel-item">
+        <img src="{%static 'Homeimg2.jpg'%}" class="d-block w-100 height2" alt="Homeimg2">
+      </div> {% endcomment %}
       <div class="carousel-item">
-        <img src="{% static 'genuvalgum2.jpg'%}" height="600" class="d-block w-100 homeimg" alt="genu valgum">
-        <div class="carousel-caption d-none d-md-block">
-            <h5 class="heading">Genu Valgum 2</h5>
-          </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'genuvalgum3.jpeg'%}" height="600" class="d-block w-100 homeimg" alt="genu valgum">
-        <div class="carousel-caption d-none d-md-block">
-            <h5 class="heading">Genu Valgum 3</h5>
-          </div>
+        <img src="{%static 'Homeimg3.jpg'%}" class="d-block w-100 height3" alt="Homeimg3">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -35,7 +26,35 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-</div>
+  </div>
+
+  <br><br> <br>
+  <div class="container-fluid">
+      <h1> KNEE DEFORMITY DETECTION </h1>
+      <p> <h4> Knee Deformity Detection is a application , in which we detect the deformity present in our knee. <br> A deformity like GenuValgum(Knock knees) and GenuVarum(Bow Leg)</h4>
+      </p>
+      <br><br>
+      <h2>What is Genu valgum Deformity?</h2>
+      <p>
+        <h4>
+        Genu valgum, known as knock-knees, is a knee misalignment that turns your knees inward. <br> When people with knock-knees stand up with their knees together, there’s a gap of 3 inches or more between their ankles.
+        <a href="/GenuValgum">Know more</a></h4>
+      </p>
+
+      <br>
+      <img src="{%static 'Homeimg5.jpg'%}" class="d-block w-100 height3" alt="Homeimg5">
+      <br>
+      <h2>what is Bow Leg Deformity?</h2>
+      <p>
+        <h4>
+        Bow legs (genu varum) is a condition where one or both of your child’s legs curve outward at the knees. <br> This creates a wider space than normal between the knees and lower legs.
+        <a href="/GenuVarum">Know more</a>
+      </h4>
+      </p>
+      <br>
+      <img src="{%static 'Homeimg4.jpg'%}" class="d-block w-100 height3" alt="Homeimg4">
+
+  </div>
 </div>
  
 
