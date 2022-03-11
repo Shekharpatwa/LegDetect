@@ -3,9 +3,13 @@ from django.urls import path
 from home import views
 from .import views
 
+# from django.views.generic.base import RedirectView
+# from django.contrib.staticfiles.storage import staticfiles_storage
+
 urlpatterns = [
     path('', views.Homepage, name='Homepage'),
     path('Homepage.html',views.Homepage,name='Homepage'),
+    # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.jpg'))),
     path('video_feed', views.video_feed, name='video_feed'),
     path('image_feed', views.image_feed, name='image_feed'),
 

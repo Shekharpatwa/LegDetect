@@ -4,12 +4,15 @@
 *{
   font-family: 'Bree Serif', serif;
 }
-/* .height2{
-  height:450px;
-}  */
+.height2{
+  height:400px;
+} 
 .height1{
   height:450px;
 }
 .height3{
   height:470px;
 } 
+.height4{
+  height: 600px;
+}

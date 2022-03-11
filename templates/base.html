@@ -5,8 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {% comment %} <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> {% endcomment %}
 
+    
 
+    {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> {% endcomment %}
 
      <!-- Font Family link -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +30,7 @@
 
     {% load static%}
 
+    {% comment %} <link rel="shortcut icon" href="{%  static 'favicon.jpg' %}"> {% endcomment %}
     <title>{% block title %} {% endblock title %}Knee Deformity Detection</title>
     <style>{% block style %} {% endblock style %} </style>
   </head>
@@ -39,8 +46,8 @@
             <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0" role="tablist">
             <li class="nav-item dropdown" role="presentation"> 
                 <a class="nav-link dropdown-toggle" data-toggle="pill" href="/Homepage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Diseases
                   <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/25/000000/external-leg-anatomy-flaticons-lineal-color-flat-icons.png"/>
+                  Diseases
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="/GenuValgum">Genu Valgum</a></li>
@@ -49,7 +56,8 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="pill" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Treatment <img src="https://img.icons8.com/color-glass/25/000000/treatment-plan.png"/>
+                  <img src="https://img.icons8.com/color-glass/25/000000/treatment-plan.png"/>
+                  Treatment 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="/TreatmentValgum">For Genu Valgum</a></li>
@@ -58,7 +66,10 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="{% url 'Hospitals' %}">Hospitals</a>
+              <a class="nav-link" data-toggle="pill" href="{% url 'Hospitals' %}">
+                <img src="https://img.icons8.com/color/25/000000/hospital.png"/>
+                Hospitals 
+              </a>
             </li>
             
             {% if user.is_authenticated %}
@@ -67,11 +78,17 @@
               </li> {% endcomment %}
 
               <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/Detection_Live">Live Detection</a>
+                <a class="nav-link" data-toggle="pill" href="/Detection_Live">
+                  <img src="https://img.icons8.com/color/25/000000/live-video-on.png"/>
+                  Live Detection 
+                </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/Detection_img">Image Detection</a>
+                <a class="nav-link" data-toggle="pill" href="/Detection_img">
+                  <img src="https://img.icons8.com/color/25/000000/image.png"/>
+                  Image Detection 
+                </a>
               </li>
             {% endif %}
             </ul>
@@ -79,7 +96,7 @@
 
           {% if user.is_authenticated %}
             <!-- User Details trigger modal -->
-            {% comment %} <button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#userdetail">
+            {% comment %} <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#userdetail">
               <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
               
               Profile
@@ -88,31 +105,31 @@
           <ul class="navbar-nav ml-auto mr-2">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle nbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Welcome {{request.user}}
+                <img src="https://img.icons8.com/ios-glyphs/25/000000/checked-user-male.png"/>
+                Welcome {{request.user}} 
               </a>
              
               {% csrf_token %}
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <!-- User Details trigger modal -->
-                <center><button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#userdetail">
+                <center><button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#userdetail">
               <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
               
               Profile
             </button></center>
-            center>
                 <a class="dropdown-item nbar1" href="/logout"><center><img src="https://img.icons8.com/external-gradak-royyan-wijaya/21/000000/external-arrow-basic-interface-iii-gradak-royyan-wijaya-2.png"/> &nbsp;Logout</a>
               </div>
           </li>
           </ul>
           {% else %}
               <!-- LOGIN trigger modal -->
-              <button type="button" class="btn btn-primary mx-2" id="buttons" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <button type="button" class="btn btn-primary mx-2"  data-bs-toggle="modal" data-bs-target="#loginModal">
                 <img src="https://img.icons8.com/external-line-adri-ansyah/25/000000/external-essentials-essentials-ui-line-adri-ansyah-23.png"/>
                 Login
               </button>
     
               <!-- SIGN UP trigger modal -->
-              <button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#signupModal">
+              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#signupModal">
                 <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
                 SignUp
               </button>
@@ -169,7 +186,11 @@
               <input type="password" class="form-control" id="pass2" name="pass2">
             </div>
 
-            <button type="submit" id="buttons" class="btn btn-primary">Submit</button>
+            <div class="d-grid gap-2">
+              <button type="submit"  class="btn btn-primary">Submit</button>
+              <button type="reset"  class="btn btn-danger">Reset</button>
+            </div>
+
           </form>
         </div>
       </div>
@@ -201,8 +222,12 @@
               <input type="password" class="form-control" id="loginpassword" name="loginpassword">
             </div>
 
-            <button type="submit" id="buttons" class="btn btn-primary">Submit</button>
-            <a href="{% url 'fpass' %}">Forget Password? <img src="https://img.icons8.com/ios-filled/20/000000/forgot-password.png"/></a>
+            <div class="d-grid gap-2">
+              <button type="submit"  class="btn btn-primary">Submit</button>
+              <button type="reset"  class="btn btn-danger">Reset</button>
+            </div>
+
+            {% comment %} <a href="{% url 'fpass' %}">Forget Password? <img src="https://img.icons8.com/ios-filled/20/000000/forgot-password.png"/></a> {% endcomment %}
           </form>
         </div>
       </div>

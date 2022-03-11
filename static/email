@@ -1,0 +1,8 @@
+user = User.objects.get(username=username)
+user_email = User.objects.get(email=email)
+if username == user:
+    messages.error(request,"Username already exits")
+    return render(request,'Homepage.html')
+if email == user_email:
+    messages.error(request,"Email already exits")
+    return render(request,'Homepage.html')
