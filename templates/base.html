@@ -79,19 +79,27 @@
 
           {% if user.is_authenticated %}
             <!-- User Details trigger modal -->
-            <button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#userdetail">
+            {% comment %} <button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#userdetail">
               <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
               
               Profile
-            </button>
+            </button> {% endcomment %}
 
           <ul class="navbar-nav ml-auto mr-2">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle nbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Welcome {{request.user}}
               </a>
+             
               {% csrf_token %}
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <!-- User Details trigger modal -->
+                <center><button type="button" class="btn btn-primary" id="buttons" data-bs-toggle="modal" data-bs-target="#userdetail">
+              <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
+              
+              Profile
+            </button></center>
+            center>
                 <a class="dropdown-item nbar1" href="/logout"><center><img src="https://img.icons8.com/external-gradak-royyan-wijaya/21/000000/external-arrow-basic-interface-iii-gradak-royyan-wijaya-2.png"/> &nbsp;Logout</a>
               </div>
           </li>
@@ -132,7 +140,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="signupModalTitle"> <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
             SignUp Here</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
         </div>
         <div class="modal-body">
           <form method="POST" action="/signup">
