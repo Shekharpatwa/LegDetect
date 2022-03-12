@@ -28,10 +28,11 @@
     </button>
   </div>
 
+
   <br><br> <br>
-  <div class="container-fluid">
+  <!-- <div class="container-fluid"> -->
       <h1> KNEE DEFORMITY DETECTION </h1>
-      <p> <h4> Knee Deformity Detection is a application , in which we detect the deformity present in our knee. <br> A deformity like GenuValgum(Knock knees) and GenuVarum(Bow Leg)</h4>
+      <p> <h4>Knee deformity detection is web application in which knee deformity like genu valgum(knock-knees) and genu varum(bow-legs) are detected. <br> The deformity is detected by measuring the angle between the leg. <br> For this purpose, the application needs a webcam to capture the image of the person.After the image is taken application start it process and show the processed image with angle on it on the screen. And then one can note the angle and fill the form which will predict the deformity.</h4>
       </p>
       <br><br>
       <h2>What is Genu valgum Deformity?</h2>
@@ -42,13 +43,13 @@
       </p>
 
       <br>
-      <!-- <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
         <img src="{%static 'Homeimg5.jpg'%}" class="card-img-top" alt="Homeimg5">
-      </div> -->
-      <img src="{%static 'Homeimg5.jpg'%}" class="d-block w-100 height4" alt="Homeimg5">
+      </div>
+      <!-- <img src="{%static 'Homeimg5.jpg'%}" class="d-block w-100 height4" alt="Homeimg5"> -->
 
       <br>
-      <h2>What is Bow Leg Deformity?</h2>
+      <h2>What is Genu Varum Deformity?</h2>
       <p>
         <h4>
         Bow legs (genu varum) is a condition where one or both of your child’s legs curve outward at the knees. <br> This creates a wider space than normal between the knees and lower legs.
@@ -56,25 +57,58 @@
       </h4>
       </p>
       <br>
-      <!-- <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
         <img src="{%static 'Homeimg4.jpg'%}" class="card-img-top w-200" alt="Homeimg4">
-      </div> -->
-      <img src="{%static 'Homeimg4.jpg'%}" class="d-block w-100 height4" alt="Homeimg4">
+      </div>
 
-      <h4> Here you can check the whether you have genu valgum/genu varum or not in your body. </h4>
+      <br>
+
+      <!-- <img src="{%static 'Homeimg4.jpg'%}" class="d-block w-100 height4" alt="Homeimg4"> -->
+
+      <h4> How to detect?</h4>
+      <ol style="list-style-type:number">
+        The application is provided with two features 
+        <li> Live Detection</li>
+        <li> Image Detection</li>
+      </ol>
+
+      
+     
+      <h2> <b><u>1. Live Detection:</u></b> </h2> 
       <p>
-        <h4>Instructions to use the detection functionality to check the deformity presences.</h4>
-        <br>
-        <ol style="list-style-type:number">
-          <li>Before you use the functionality you have to sign up and login in our website to use the functionality.</li>
-          <li>You should fall within the age gap mentioned below otherwise the result will not be correct. </li>
-          <li>You should stand in your normal body position and not in any style otherwise the result will not be correct. </li>
-          <li>You have to stand in front of the camera and their should be other person who will take your photo and note down the angles mentioned below.</li>
-          <li>Type the noted angles of your body in the form and click on the "Predict" button to get the result.</li>
-          <li> <b><i>Note:</i></b> If it shows you have deformity, you have to consult to the doctor for its treatment.</li>
-        </ol>
+        <h4>
+          In this feature the application will process the webcam continuously and will provide the continuous video on the screen. The Video streaming will only be stop by changing to other tab. <br> This feature is recommended to two users where one will stand in front of webcam and other will note the angle and then fill the prediction form.
+        </h4>
       </p>
-  </div>
+      <br>
+      <h2><b><u>2. Image Detection:</u></b></h2> 
+      <p>
+        <h4>
+          In this feature the application will process the webcam for 5 second and then the still and processed image will appear on the screen. One can note the angle from the screen and can fill in the form to predict the deformity. This feature is recommended to single user who can stand still for 5 sec in front of the webcam and then the processed image will appear and then note the angle and fill the form.
+        </h4>
+      </p>
+      
+      <br>
+      <ol style="list-style-type:number">
+        <h2><b><u><i>NOTE:</i></u></b></h2>
+        <h3>For the correct prediction one need to fulfill the following condition. </h3> 
+        <li> One need to stand still in normal pose (refer the image here).</li>
+        <li>One need to stand in a way that his/her full body is seen on the screen (refer the image here).
+          <div class="card" style="width: 18rem;">
+            <img src="{%static 'FF.jpg'%}" class="card-img-top w-200" alt="FFimgposition">
+          </div>
+        </li>
+        <li>One need to dress in a way that his /her leg is visible (refer the image here).</li>
+        <li>And provide the correct birth year in order to produce a correct prediction.</li>
+        <li>The deformity can be corrected by doing some exercise or surgery if the deformity is especially present in child. So, one need to go to the doctor for the further treatment.</li>
+      </ol>
+
+     
+      
+      
+      
+      
+  <!-- </div> -->
 </div>
  
 

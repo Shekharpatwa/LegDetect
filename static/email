@@ -6,3 +6,15 @@ if username == user:
 if email == user_email:
     messages.error(request,"Email already exits")
     return render(request,'Homepage.html')
+
+
+
+data=User.objects.all()
+	z=0
+	for i in data:
+    	if i.email==email:
+    		z=1
+			break
+	if z==1:
+        messages.ERROR(request,"Email already exists")
+    	return render(request,"Homepage.html",{"Variable":"Email id already exists"})

@@ -54,17 +54,28 @@ def handleSignup(request):
 		#Username must be under 10 character
 		if len(username) > 10:
 			messages.error(request, 'Username must be under 10 character')
+			print(messages.error(request, 'Username must be under 10 character'))
 			return redirect('Homepage')
 		
 		#Username should be alphanumeric
 		if not username.isalnum():
 			messages.error(request, 'Username should only contain letters and numbers')
+			print(messages.error(request, 'Username should only contain letters and numbers'))
 			return redirect('Homepage')
+
+		# user = User.objects.all(username=username)
+		# user_email = User.objects.all(email=email)
+		# if username == user:
+		# 	messages.error(request,"Username already exits")
+		# 	return redirect('Homepage')
+		# if email == user_email:
+		# 	messages.error(request,"Email already exits")
+		# 	return redirect('Homepage')
 			
-		#password should match
-		if pass1 != pass2:
-			messages.error(request, 'Passwords do not match')
-			return redirect('Homepage')
+		# #password should match
+		# if pass1 != pass2:
+		# 	messages.error(request, 'Passwords do not match')
+		# 	return redirect('Homepage')
 			
 		# data=User.objects.all()
 		# z=0
@@ -74,6 +85,28 @@ def handleSignup(request):
 		# 		break
 		# if z==1:
     	# 	return render(request,"Homepage.html",{"Variable":"Email id already exists"})
+
+		
+		# data=User.objects.all()
+		# z=0
+		# for i in data:
+		# 	if i.email==email:
+		# 		z=1
+		# 		break
+		# if z==1:
+		# 	return redirect(request,"Homepage")
+
+		data=User.objects.all()
+		z=0
+		for i in data:
+			if i.email==email:
+				z=1
+				break
+		if z==1:
+			messages.error(request,"Email already exists")
+			print(messages.error(request,"Email already exists"))
+			return redirect("Homepage.html")
+
 
 		# #Create the User
 		myuser = User.objects.create_user(username,email,pass1)
@@ -92,9 +125,9 @@ def handleSignup(request):
 		
 
 		# return redirect('Homepage')
-		return redirect('GenuValgum')
+		return redirect('Homepage')
 
-	else:
+	else:	
 		return HttpResponse('404 - Not found')
 
 
@@ -113,10 +146,10 @@ def handleLogin(request):
 			messages.success(request, "Successfully Logged In")
 			return redirect('Homepage')
 
-	else:
-		messages.error(request, "Invalid credentials, Please try again")
-		print(messages.error(request, "Invalid credentials, Please try again"))
-		return redirect('GenuVarum')
+		else:
+			messages.error(request, "Invalid credentials, Please try again")
+			print(messages.error(request, "Invalid credentials, Please try again"))
+			return redirect('Homepage')
 
 	# return HttpResponse('handleLogin')
 	return render(request, 'GenuValgum.html')
