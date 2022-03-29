@@ -8,7 +8,8 @@ class VideoImgManager():
 
     def __init__(self,webcam_id=0):
         self.POSE_ESTIMATOR = PoseEstimator()
-        self.video = cv.VideoCapture(webcam_id)
+        self.video = cv.VideoCapture(0)
+        # self.video = cv.VideoCapture(0, cv.CAP_DSHOW)
 
         self.FIRST = True
 

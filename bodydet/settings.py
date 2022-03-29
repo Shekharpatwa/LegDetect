@@ -155,12 +155,12 @@ MESSAGE_TAGS = {
 
 #SMTP Configuration
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'shekharpatwa2001@gmail.com'
-# EMAIL_HOST_PASSWORD = 'shekhar1201'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'shekharpatwa2001@gmail.com'
+EMAIL_HOST_PASSWORD = 'patwa@1201'
 
 
 # REST_FRAMEWORK = {

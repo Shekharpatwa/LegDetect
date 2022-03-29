@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}KTest html {% endblock title %}
+
+{% block body%}
+
+<h1>Test html</h1>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    <button type="submit">Submit</button>
+    <div class="mb-3">
+        <label class="form-label"><b>Result:</b></label>
+             {% for testing in testings %}
+                 <label for="name" class="form-label">{{testing.object.name}}</label>
+             {% endfor %}
+     </div> 
+</form>
+{%endblock%}

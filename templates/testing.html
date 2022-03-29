@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}/Testing {% endblock title %}
+{% comment %} {% load static%} {% endcomment %}
+{% block body %}
+
+<div class="container">
+    <form method="post" action="/testing">
+        {% csrf_token %}
+        <input type="text" name="name" id="name">
+        <span name="LiveRes1" id="LiveRes1">Gooff didaf</span>
+        <span name="LiveRes2" id="LiveRes2"> morning leg</span>
+        <br>
+        <label id="msg" name="msg">Hello how are you: ??</label>
+        <br>
+        <input type="text" name="resu" id="resu">
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}

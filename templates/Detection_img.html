@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% block title %} Photo Detection {% endblock title %}
 {% load static%}
 {% block body %}
@@ -7,11 +8,22 @@
 
 
 <h1 style="text-align: center;">Body DETECTION By Taking Photo Using Webcam</h1>
-<div style="justify-content: center; display: flex; margin-top: 30px;"><img src="{% url 'image_feed' %}">
+<div id="img">
+    <!-- <div class="imgdetect" style="justify-content: center; display: flex; margin-top: 30px;">
+    <img src="{% url 'image_feed' %}">
+</div> -->
+</div>
+
+<div id="spinner">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 </div>
 <div class="container detectform">
     <h2>For Detection fill the details </h2>
-    <form method="POST" action="Detection_img">
+    <form action="/Detection_img" method="POST">
         {% csrf_token %}
 
         {% for message in messages %}
@@ -22,8 +34,8 @@
         {% endfor %}
 
         <div class="mb-3">
-            <label class="form-label" for="username">Username: </label>
-            <input class="form-control" type="text" id="username" name="username" placeholder="Enter username" required />
+            <label class="form-label" for="name">Username: </label>
+            <input class="form-control" type="text" id="name" name="name" placeholder="Enter username" required />
         </div>
 
         <div class="mb-3">
@@ -39,20 +51,49 @@
             <b> Enter Date of Birth: <input type="date" id = "DOB" required/> </b>  
             <span id = "message" style="color:red"> </span> <br><br>  
         </div>  
-  
-        <button type="submit" name="submit" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary"> Predict </button>
+        
+        <input type="button" name="Predict" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary">
+        <label name="imgRes1" id="imgRes1"></label>
 
-        <span name="imgRes1" id="imgRes1"></span>
+        <label name="imgRes2" id="imgRes2"></label>
 
-        <span name="imgRes2" id="imgRes2"></span>
+        <!-- <label name="RESULT" id="RESULT"></label> -->
         <br>
+        <br>
+        <button type="Submit" name="submit" id="btn1" class="btn btn-primary">Submit</button> 
+        <br> <br> 
+        <!-- <button type="submit">Submit</button> -->
+
         <button type="reset"  class="btn btn-danger">Reset</button>
-
-
     </form>
 </div>
 
 <script>
+
+    const spinner = document.getElementById('spinner');
+    const imgdet = document.getElementById('img');
+
+        $.ajax({
+            type: 'GET',
+            url:'/Detection_img',
+            success: function(res){
+                setTimeout(() => {
+
+                    spinner.classList.add('no-display')
+                    console.log('success2');
+                    imgdet.innerHTML += `
+                    <div class="imgdetect" style="justify-content: center; display: flex; margin-top: 30px;">
+                    <img src="{% url 'image_feed' %}">
+                    </div>`
+                    // spinner.classList.add('no-display')
+                    // $('#spinner').hide();
+                },400);
+            },
+            error:function(er){
+                console.log('error')
+            },
+        })
+
     var btn1 = document.getElementById("btn1");
     btn1.addEventListener("click",e=>{
         e.preventDefault();
@@ -131,7 +172,20 @@
         }
                 
         }  
+
+        // let imgRes1 = document.getElementById('imgRes1').value
+        // let imgRes2 = document.getElementById('imgRes2').value
+
+
+
+        //     document.getElementById('RESULT').innerHTML = document.getElementById("imgRes1").value + document.getElementById("imgRes2").value;
+
+        
+
     }  
+
+   
+
 </script>
 
 {% endblock body %}

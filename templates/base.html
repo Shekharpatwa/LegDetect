@@ -7,7 +7,8 @@
 
     {% comment %} <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> {% endcomment %}
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     {% comment %} <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -88,6 +89,12 @@
                 <a class="nav-link" data-toggle="pill" href="/Detection_img">
                   <img src="https://img.icons8.com/color/25/000000/image.png"/>
                   Image Detection 
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="/UserProfile">
+                 Profile
                 </a>
               </li>
             {% endif %}
@@ -186,6 +193,13 @@
               <input type="password" class="form-control" id="pass2" name="pass2">
             </div>
 
+            <h4>Note:</h4>
+            <ol style="list-style-type:number">
+              <li>Username must be under 10 characters.</li>
+              <li>Username must contain both numbers and alphabets.</li>
+              <li>Password should not be less than 8 and greater than 15.</li>
+            </ol>
+
             <div class="d-grid gap-2">
               <button type="submit"  class="btn btn-primary">Submit</button>
               <button type="reset"  class="btn btn-danger">Reset</button>
@@ -255,6 +269,13 @@
                   <label for="email" class="form-label"><b>Email address:</b></label>
                   <label for="email" class="form-label">{{user.email}}</label>
               </div>
+
+              {% comment %} {% for Testing in Testing %}
+              <div class="mb-3">
+                <label for="email" class="form-label"><b>Result:</b></label>
+                <label for="email" class="form-label">{{Testing.name}}</label>
+            </div>
+            {% endfor %} {% endcomment %}
 
 
           </div>

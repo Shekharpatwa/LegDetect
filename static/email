@@ -18,3 +18,180 @@ data=User.objects.all()
 	if z==1:
         messages.ERROR(request,"Email already exists")
     	return render(request,"Homepage.html",{"Variable":"Email id already exists"})
+
+
+		#  username = request.POST['username']
+		#  imgRes1 = request.POST['imgRes1']
+		#  imgRes2 = request.POST['imgRes2']
+		#  username = request.POST.get('username')
+		#  imgRes1 = request.POST.get('imgRes1')
+		#  imgRes2 = request.POST.get('imgRes2')
+		#  print(username,imgRes1,imgRes2)
+		#  print(username,imgRes1,imgRes2)
+			username = request.POST['username']
+			imgRes1 = request.POST['imgRes1']
+			imgRes2 = request.POST['imgRes2']
+			print(username,imgRes1,imgRes2)
+
+			img_Result = imageResult(username=username,imgRes1=imgRes1,imgRes2=imgRes2)
+			img_Result.save()
+
+			img_Result = imageResult(user=username,imgRes1=imgRes1,imgRes2=imgRes2,date=datetime.today())
+					img_Result.save()
+					messages.success(request,'Stored successfully') 
+
+
+
+def Detection_img(request):
+    	if request.method == "POST":
+		# # username = request.POST['username']
+		# # imgRes1 = request.POST['imgRes1']
+		# # imgRes2 = request.POST['imgRes2']
+		# username = request.POST.get('username')
+		# imgRes1 = request.POST.get('imgRes1')
+		# imgRes2 = request.POST.get('imgRes2')
+		# # print(username,imgRes1,imgRes2)
+		# print(username,imgRes1,imgRes2)
+
+		# img_Result = imageResult(user=username,imgRes1=imgRes1,imgRes2=imgRes2,date=datetime.today())
+		# img_Result.save()
+		# messages.success(request,'Stored successfully') 
+
+		# username = request.POST['username']
+		# imgRes1 = request.POST['imgRes1']
+		# imgRes2 = request.POST['imgRes2']
+		# print(username,imgRes1,imgRes2)
+
+		# img_Result = imageResult(username=username,imgRes1=imgRes1,imgRes2=imgRes2)
+		# img_Result.save()
+		    # user = User.objects.get(username=username)
+			# user_email = user.email
+
+		RESULT = request.POST['RESULT']
+
+			user_email = User.objects.get(email=email)
+		    send_mail('Your result of detection',mail_message,settings.EMAIL_HOST_USER,[user_email],fail_silently=False)
+	
+	return render(request, 'Detection_img.html') 
+ 
+
+def test(request):
+    if request.method == "POST":
+    	message = request.POST['message']
+	    send_mail('Password Reset Request',message,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
+		
+    return render(request,'test.html')
+
+
+user_email = User.objects.all()
+for i in user_email:
+    email_id = i.email
+	break
+
+
+# def live_Res(request):
+#     if request.method == 'POST':
+#     	username = request.POST.get('username')
+# 	   	LiveRes1 = request.POST.get('LiveRes1')
+# 	   	LiveRes2 = request.POST.get('LiveRes2')
+# 	   	live_Res = liveResult(user=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
+# 	   	live_Res.save()
+    
+#     return render(request, 'Detection_Live.html')  
+
+def live_Res(request):
+	if request.method == 'POST':
+    	username = request.POST['username']
+	    LiveRes1 = request.POST['LiveRes1']
+	    LiveRes2 = request.POST['LiveRes2']
+	    live_res = liveResult(username=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
+	    live_Res.save()
+
+
+def Detection_Live(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        LiveRes1 = request.POST['LiveRes1']
+        LiveRes2 = request.POST['LiveRes2']
+        live_res = liveResult(username=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
+        live_Res.save()
+
+    return render(request,'Detection_Live.html')
+
+def testing(request):
+	if request.method == 'POST':
+        username = request.POST['username']
+        LiveRes1 = request.POST['LiveRes1']
+        LiveRes2 = request.POST['LiveRes2']
+        print(username,LiveRes1,LiveRes2)
+        live_res = liveResult(username=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
+        live_Res.save()
+	
+	return render(request,'testing.html')
+
+
+def testing(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        print(username)
+        live_res = liveResult(username=username,date=datetime.today())
+        live_Res.save()
+	
+    return render(request,'testing.html')
+
+
+def testing(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        messagea = request.POST['messagea']
+        tests = Testing(name=name,resu=messagea)
+        tests.save()
+	
+    return render(request,'testing.html')
+
+
+
+def Detection_img(request):
+	if request.method == 'POST':
+	    name = request.POST.get('name')
+    	imgRes1 = request.POST.get('imgRes1')
+    	imgRes2 = request.POST.get('imgRes2')
+	    print(name)
+	    repo = Report(name=name)
+	    repo.save()
+	
+	return render(request,'Detection_img.html')
+
+
+def UserProfile(request):
+    Reports = Testing.objects.all()
+    context = {'Report':Reports}
+    for item in Reports:
+       print(item.name)
+    print(context)
+    return render(request,'UserProfile.html',context)
+
+def Detection_Live(request):
+	if request.method == "POST":
+    	name = request.POST['name']
+    	Langle = request.POST['Langle']
+	    Rangle = request.POST['Rangle']
+		# # print(username,imgRes1,imgRes2)
+		# print(username,imgRes1,imgRes2)
+
+		# send_mail('Your result of detection',username,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
+		
+	    Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
+    	Result.save()
+	return render(request,'Detection_Live.html')
+
+def Detection_Live(request):
+	if request.method == "POST":
+		name = request.POST['name']
+		Langle = request.POST['Langle']
+		Rangle = request.POST['Rangle']
+
+		Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
+		Result.save()
+
+	return render(request,'Detection_Live.html')

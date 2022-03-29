@@ -11,12 +11,12 @@
 </div>
 <div class="container detectform">
     <h2>For Detection fill the details </h2>
-    <form method="post" action="Detection">
+    <form method="POST" action="/Detection_Live">
         {% csrf_token %}
 
         <div class="mb-3">
             <label class="form-label" for="username">Username: </label>
-            <input class="form-control" type="text" id="username" name="username" placeholder="Enter username" required />
+            <input class="form-control" type="text" id="name" name="name" placeholder="Enter username" required />
         </div>
 
         <div class="mb-3">
@@ -34,13 +34,16 @@
         </div>  
   
         {% comment %} <input type="submit" name="submit" onclick = "ageCalculator()" value="Predict" id="btn1"/> {% endcomment %}
-        <button type="submit" name="submit" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary"> Predict </button>
+        <input type="button" name="Predict" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary">
         
 
-        <span id="LiveRes1"></span>
-        <span id="LiveRes2"></span>
+        <span id="LiveRes1" name="LiveRes1"></span>
+        <span id="LiveRes2" name="LiveRes2"></span>
 
         <br>
+        <br>
+        <button type="Submit" name="submit" id="btn1" class="btn btn-primary">Submit</button> 
+
         <button type="reset"  class="btn btn-danger">Reset</button>
 
     </form>
