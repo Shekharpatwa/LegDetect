@@ -8,10 +8,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 {% comment %} <img class="bgimg" src="{% static 'img1.jpg'%}"> {% endcomment %}
 <div id="gvalgum" class="container gvalgum">
-
-
+  <br><br><br>
     <div class="container gvalcontent">
-        <h1>What is Genu Valgum ?</h1>
+      <h2>Contents</h2>
+      <li> <a href="#gvalgum"> What is Genu Valgum Deformity?</a> </li>
+      <li> <a href="#symptoms"> What are the symptoms of genu valgum ?</a> </li>
+
+      <br><br>
+        <h1 id="gvalgum">What is Genu Valgum Deformity?</h1>
 
         <p>
             Genu valgum, known as knock-knees, is a knee misalignment that turns your knees inward.
@@ -42,7 +46,8 @@
           <img src="{%static 'gvalgum2.jpg'%}" class="card-img-top" alt="gvalgum1">
         </div> -->
 
-        <h1> What are the symptoms of genu valgum ?</h1>
+
+        <h1 id="symptoms"> What are the symptoms of genu valgum ?</h1>
         <p>
             Genu valgum that persists beyond childhood may have other symptoms besides misaligned knees. <br>
             They include:
@@ -60,128 +65,7 @@
         
     </div>
 
-    
 
-
-    {% comment %} <div class="album py-5 bg-light">
-        <div class="container my-3">
-        <h1 class="my-4 text-center">Select from our range of Ice Creams</h1>
-    
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{%static 'Fortis_hiran_Hosp_Navi_Mum.jpg'%}" class="card-img-top" alt="Hospital_img">
-    
-                <div class="card-body">
-                    <h5 class="card-title">Fortis Hiranandani Hospital, Vashi, Navi Mumbai</h5>
-                    <p class="card-text">Plot No. 28, Juhu Chowpatty Marg, Juhu Nagar, Sector 10A, Navu Mumbai, Mumbai, 4000703,India</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{%static 'Fortis Hospital ,Mulund.jpg'%}" class="card-img-top" alt="Hospital_img">
-    
-                <div class="card-body">
-                    <h5 class="card-title">Fortis Hospital, Mulund, Mumbai</h5>
-                    <p class="card-text">Mulund Goregaon Link Road,Mulund (West), Mumbai, Maharashtra, 400078, India</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{%static 'Jaslok Hosp,Mum.JPG'%}" class="card-img-top" alt="Hospital_img">
-
-                <div class="card-body">
-                    <h5 class="card-title">Jaslok Hospital, Mumbai</h5>
-                    <p class="card-text">15 - Deshmukh Marg, Pedder Road, Mumbai, Maharashtra, 400026, India</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{%static 'Kokilaben Hospital Andheri.JPG'%}" class="card-img-top" alt="Hospital_img">
-                
-                <div class="card-body">
-                    <h5 class="card-title">Kokilaben Dhirubhai Ambani Hospital, Andheri, Mumbai</h5>
-                    <p class="card-text">Rao Saheb Achutrao Patwardhan Marg, four Bunglows, Mumbai, Maharashtra, 400053, India</p>
-                </div>
-              </div>
-    
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static 'Global Hospital,Mum.JPG'%}" class="card-img-top" alt="Hospital_img">
-
-                    <div class="card-body">
-                      <h5 class="card-title">Global Hospital, Mumbai</h5>
-                      <p class="card-text">35, D.E.Borges Road, Hospital Avenue Opp Shirodkar High School, Parel, Mumbai, Maharashtra, 400012, India</p>
-                    </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static '\Saifee Hosp,Mum.JPG'%}" class="card-img-top" alt="Hospital_img">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title">Saifee Hospital, Mumbai</h5>
-                      <p class="card-text">15/17, Maharshi Karve Marg, Girgaon, charni Road, Mumbai, Maharashtra, 400004, India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static 'SL Hosp,Mum.JPG'%}" class="card-img-top" alt="Hospital_img">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title">S L Raheja Hospital, Mahim, Mumbai</h5>
-                      <p class="card-text">Raheja Rugnalaya Marg, Mahim(West), Mumabi, Maharashtra. 400016, India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static 'Reliance Hosp,Navi Mum.JPG'%}" class="card-img-top" alt="Hospital_img">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title">Reliance Hospital, Navi Mumbai</h5>
-                      <p class="card-text">X8 and X8/1, Thane - Belapur Road, Opposite Kopar Khairane Ghansoli Station Road, Dhirubhai Ambani Knowledge City, MIDC Industrial area, Kopar Khairane, Navi Mumbai, Maharashtra, 400710, India</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static 'SRV Hosp Dombivli.JPG'%}" class="card-img-top" alt="Hospital_img">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title">SRV Mamata Hospital, Dombivli, Mumbai</h5>
-                      <p class="card-text">P-43, next to ICICI Bank, Phase II, MIDIC, Dombivli, E, Dombivli, Mumbai, Maharashtra, 421203, India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{%static 'SRV Hosp Chembur.JPG'%}" class="card-img-top" alt="Hospital_img">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title">SRV Hospital, Chembur, Mumbai</h5>
-                      <p class="card-text">Dr Mandakini Parihar marg, Opposite Lokmanya Tilak Terminus, Shell Colony, Mumbai, Maharashtra, 400089, India</p>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-          </div> {% endcomment %}
-        {% comment %} </div> {% endcomment %}
 
 </div>
 

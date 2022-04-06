@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Detection {% endblock title %}
+{%load static%}
+{% block body %}
+
+<div class="container my-3">
+
+    {% if user.is_authenticated %}
+        <div class="container">    
+            <div class="mb-3">
+                <label for="email" class="form-label"><h3><b>Username:</b></h3></label>
+                <label for="email" class="form-label"><h3><b>{{user.username}}</b></h3></label>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"><h3><b>Email address:</b></h3></label>
+              <label for="email" class="form-label"><h3><b>{{user.email}}</b></h3></label>
+          </div>
+            
+          {% endif%}
+</div>
+
+<h2> Live Detection Data </h2> 
+
+<div class="container my-3">  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">LeftLeg Angle</th>
+          <th scope="col">RightLeg Angle</th>
+          <th scope="col">Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in UserProfile2  %}
+            
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{i.name}}</td>
+                      <td>{{i.LiveLeftAngle}}</td>
+                      <td>{{i.LiveRightAngle}}</td>
+                      <td>{{i.date}}</td>
+                      
+                    </tr>
+            
+         {% endfor %}
+      </tbody>
+    </table>
+    
+</div>
+
+
+
+{% endblock%}

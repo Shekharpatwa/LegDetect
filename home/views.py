@@ -14,7 +14,8 @@ from datetime import datetime
 from django.conf import settings
 from django.core.mail import send_mail
 import uuid
-from .models import Profile
+# from .models import Profile
+from .models import Prof
 
 import cv2 as cv
 
@@ -35,26 +36,14 @@ def TreatmentValgum(request):
 def TreatmentVarum(request):
     return render(request,'TreatmentVarum.html')
 
-# def Detection_Live(request):
-# 	return render(request,'Detection_Live.html')
+def page1(request):
+    return render(request,'page1.html')
 
+def page2(request):
+    return render(request,'page2.html')
 
-# def Detection_Live(request):
-# 	if request.method == "POST":
-#     	name = request.POST['name']
-#     	Langle = request.POST['Langle']
-# 	    Rangle = request.POST['Rangle']
-# 		# # print(username,imgRes1,imgRes2)
-# 		# print(username,imgRes1,imgRes2)
-
-# 		# send_mail('Your result of detection',username,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
-		
-# 	    Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
-#     	Result.save()
-# 	return render(request,'Detection_Live.html')
-
-# def Detection_img(request):
-#     return render(request,'Detection_img.html')
+def page3(request):
+    return render(request,'page3.html')
 
 def handleSignup(request):
 	# Get the POST parameters
@@ -78,39 +67,25 @@ def handleSignup(request):
 			# print(messages.error(request, 'Username should only contain letters and numbers'))
 			return redirect('Homepage')
 
-		# user = User.objects.all(username=username)
-		# user_email = User.objects.all(email=email)
-		# if username == user:
-		# 	messages.error(request,"Username already exits")
-		# 	return redirect('Homepage')
-		# if email == user_email:
-		# 	messages.error(request,"Email already exits")
-		# 	return redirect('Homepage')
-			
+	
 		# #password should match
 		if pass1 != pass2:
 			messages.error(request, 'Passwords do not match')
 			# print(messages.error(request, 'Passwords do not match'))
 			return redirect('Homepage')
 			
-		# data=User.objects.all()
-		# z=0
-		# for i in data:
-    	# 	if i.email==email:
-    	# 		z=1
-		# 		break
-		# if z==1:
-    	# 	return render(request,"Homepage.html",{"Variable":"Email id already exists"})
-
 		
-		# data=User.objects.all()
-		# z=0
-		# for i in data:
-		# 	if i.email==email:
-		# 		z=1
-		# 		break
-		# if z==1:
-		# 	return redirect(request,"Homepage")
+
+		data=User.objects.all()
+		y=0
+		for j in data:
+			if j.username==username:
+				y=1
+				break
+		if y==1:
+			messages.error(request,"Username already exists")
+			# print(messages.error(request,"Email already exists"))
+			return redirect("Homepage.html")
 
 		data=User.objects.all()
 		z=0
@@ -130,17 +105,10 @@ def handleSignup(request):
 		
 
 		myuser.save()
-		
-		# ftoken = str(uuid.uuid4())
-		
-		# profile = Profile.objects.create(user=user,forget_token=ftoken)
+
 		
 		messages.success(request, 'Your account has been successfully created')
 
-		
-		
-
-		# return redirect('Homepage')
 		return redirect('Homepage')
 
 	else:	
@@ -161,6 +129,9 @@ def handleLogin(request):
 		
 		user = authenticate(username=loginusername, password=loginpassword)
 		
+		ftoken = str(uuid.uuid4())
+		
+		profile = Prof.objects.create(user=user,forget_token=ftoken)
 
 		if user is not None:
 			login(request, user)
@@ -190,14 +161,24 @@ def handleLogout(request):
 # def UserProfile(request):
 #     return render(request,'UserProfile.html')
 
-def UserProfile(request):
-    Reports = ImageRes.objects.all()
-    context = {'Report':Reports}
-    for item in Reports:
-       print(item.ImgLeftAngle)
-    print(context)
-    return render(request,'UserProfile.html')
+def UserProfile1(request):
+    # Reports = ImageRes.objects.all()
+    # context = {'Report':Reports}
+    # for item in Reports:
+    #    print(item.ImgLeftAngle)
+    # print(context)
+    # return render(request,'UserProfile.html')
+	allresult = ImageRes.objects.all().filter(name = request.user)
+	
+	context = {'UserProfile1': allresult}
+	print(context)
+	
+	return render(request,'UserProfile1.html',context)
 
+def UserProfile2(request):
+    allresult = LiveRes.objects.all().filter(name = request.user)
+    context = {'UserProfile2': allresult}
+    return render(request,'UserProfile2.html',context)
 
 #Forget password
 def fpass(request):
@@ -205,7 +186,7 @@ def fpass(request):
         username = request.POST['username']
         user = User.objects.get(username=username)
         # print(user.check_password("admin"))
-        profile = Profile.objects.get(user=user)
+        profile = Prof.objects.get(user=user)
         user_email = user.email
         print(user_email)
         ftoken = profile.forget_token
@@ -218,7 +199,7 @@ def fpass(request):
 def changepassword(request,id):
     if request.method == 'POST':
         password = request.POST['password']
-        profile = Profile.objects.get(forget_token=id).user
+        profile = Prof.objects.get(forget_token=id).user
         user = User.objects.get(username=profile)
         user.set_password(password)
         user.save()
@@ -274,6 +255,7 @@ def Detection_img(request):
 		
 		Result = ImageRes(name=name,ImgLeftAngle=Langle,ImgRightAngle=Rangle,date=datetime.today())
 		Result.save()
+		messages.success(request,'Stored successfully') 
 
 
 
@@ -288,6 +270,7 @@ def Detection_Live(request):
 
     	Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
     	Result.save()
+    	messages.success(request,'Stored successfully') 
 
     return render(request,'Detection_Live.html')
 

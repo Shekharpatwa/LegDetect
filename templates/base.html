@@ -36,7 +36,7 @@
     <style>{% block style %} {% endblock style %} </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark bg-gradient">
         <div class="container-fluid">
           <img src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/25/000000/external-knee-anatomy-vitaliy-gorbachev-blue-vitaly-gorbachev.png"/>
           <a class="navbar-brand" href="{% url 'Homepage' %}">Knee Deformity Detection</a>
@@ -92,10 +92,15 @@
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="/UserProfile">
-                 Profile
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="pill" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
+                  Profile 
                 </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" id="imagedata" href="/UserProfile1">Image Detection </a></li>
+                  <li><a class="dropdown-item" id="livedata" href="/UserProfile2">Live Detection</a></li>
+                </ul>
               </li>
             {% endif %}
             </ul>
@@ -119,11 +124,11 @@
               {% csrf_token %}
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <!-- User Details trigger modal -->
-                <center><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userdetail">
+                {% comment %} <center><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userdetail">
               <img src="https://img.icons8.com/external-gliphyline-royyan-wijaya/25/000000/external-account-nightlife-business-glyph-gliphyline-royyan-wijaya.png"/>
               
               Profile
-            </button></center>
+            </button></center> {% endcomment %}
                 <a class="dropdown-item nbar1" href="/logout"><center><img src="https://img.icons8.com/external-gradak-royyan-wijaya/21/000000/external-arrow-basic-interface-iii-gradak-royyan-wijaya-2.png"/> &nbsp;Logout</a>
               </div>
           </li>
@@ -241,7 +246,7 @@
               <button type="reset"  class="btn btn-danger">Reset</button>
             </div>
 
-            {% comment %} <a href="{% url 'fpass' %}">Forget Password? <img src="https://img.icons8.com/ios-filled/20/000000/forgot-password.png"/></a> {% endcomment %}
+          <a href="{% url 'fpass' %}">Forget Password? <img src="https://img.icons8.com/ios-filled/20/000000/forgot-password.png"/></a>
           </form>
         </div>
       </div>
@@ -249,7 +254,7 @@
   </div>
   
    <!--user DETAILS MODAL-->
-   <div class="modal fade" id="userdetail" tabindex="-1" aria-labelledby="userdetail" aria-hidden="true">
+   <!--<div class="modal fade" id="userdetail" tabindex="-1" aria-labelledby="userdetail" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -284,11 +289,18 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
       {% block body%}  {% endblock body%}
 
-      
+      <footer>
+        <div class="footer">
+          <center>
+            <label for="phone no" class="form-label"><h4>Phone no: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+            <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+          </center>
+        </div>
+      </footer>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

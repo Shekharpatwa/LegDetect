@@ -8,34 +8,43 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <div id="gvarum" class="container gvarum">
+    <br><br><br>
+    <div class="container gvalcontent">
+      <h2>Contents</h2>
+      {% comment %} <li> <a href="#gvalgum">What is Bow Leg(Genu Varum)?</a> </li> {% endcomment %}
+      <li> <a href="#bowleg"> Who gets bow legs?</a> </li>
+      <li> <a href="#causes"> What causes bowed legs in babies?</a> </li>
+      <li> <a href="#symptoms"> What are the symptoms of bow legs(genu varum) ?</a> </li>
+
+      <br>
     <div class="container gvarcontent">
-            <h1>What is Bow Leg(Genu Varum)?</h1>
+            <h1 id="gvalgum">What is Bow Leg(Genu Varum)?</h1>
             <p class="lead">
             Bow legs (genu varum) is a condition where one or both of your child’s legs curve outward at the knees. 
             This creates a wider space than normal between the knees and lower legs. When your child stands with his or her feet and ankles together, the knees stay wide apart.
             Your child’s legs may look like a bow, especially when they walk.
             </p>
     
-            <div class="card" style="width: 18rem;">
+            <div id="bowleg" class="card" style="width: 18rem;">
                 <img src="{%static 'gvarum1.jpg'%}" class="card-img-top" alt="gvalgum1">
             </div>
         
+        <br>
         
             <h1>Who gets bow legs?</h1>
-            <p>
+            <p id="causes">
                 Bow legs are common in infants and toddlers. The condition is rarely serious.
                 Babies born bow legged usually grow out of the condition by the time they turn 18 months old. 
                 Bow legs also can occur in older children. You’ll want to have these cases evaluated by a healthcare provider.
             </p>
         
     
-        
         <!-- <div class="img">
             <img src="{%static 'genu-valgum.jpg'%}" alt="valgumimg1">
         </div>
      -->
       
-            <h1> What causes bowed legs in babies?</h1>
+            <h1 > What causes bowed legs in babies?</h1>
             <p>
                 Bow legs develop for a number of different reasons. The most common cause of bow legs is a condition called physiologic genu varum.
                 When your baby was developing in the uterus (womb), they were in a cramped position.
@@ -79,7 +88,7 @@
        
 
         
-            <h1> What are the symptoms of bow legs(genu varum) ?</h1>
+            <h1 id="symptoms"> What are the symptoms of bow legs(genu varum) ?</h1>
             <p>
                 The main sign of bowed legs is the appearance of your child’s legs. Their knees won’t touch when they stand with their feet and ankles together. 
                 The bowing is most obvious when they’re walking. Sometimes children may walk with their toes pointed inward (pigeon toes or intoeing). 

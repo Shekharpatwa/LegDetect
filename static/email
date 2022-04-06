@@ -195,3 +195,31 @@ def Detection_Live(request):
 		Result.save()
 
 	return render(request,'Detection_Live.html')
+
+
+
+
+	# def Detection_Live(request):
+# 	if request.method == "POST":
+#     	name = request.POST['name']
+#     	Langle = request.POST['Langle']
+# 	    Rangle = request.POST['Rangle']
+# 		# # print(username,imgRes1,imgRes2)
+# 		# print(username,imgRes1,imgRes2)
+
+# 		# send_mail('Your result of detection',username,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
+		
+# 	    Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
+#     	Result.save()
+# 	return render(request,'Detection_Live.html')
+
+# def Detection_img(request):
+#     return render(request,'Detection_img.html')
+
+<footer>
+        <div class="footer">
+          <label for="phone no" class="form-label"><h3>Phone no: <u>9324170787</u> , <u>9324599096</u> </h3></label> <br>
+          <label for="emailid" class="form-label"> <h3>Email ID: <u> legdetect1229@gmail.com</u></h3> </label>
+
+        </div>
+      </footer>

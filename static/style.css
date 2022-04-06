@@ -13,3 +13,10 @@
 .height3{
   height:450px;
 } 
+
+/* footer  */
+.footer{
+  background: aqua;
+  color: rgb(219, 9, 9);
+  /* border-radius: 2rem; */
+}

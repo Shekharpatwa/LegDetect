@@ -11,12 +11,14 @@
       <div class="carousel-item active">
         <img src="{%static 'Homeimg1.jpg'%}" class="d-block w-100 height1" alt="Homeimg1">
       </div>
-      <!-- <div class="carousel-item">
-        <img src="{%static 'Homeimg6.jpg'%}" class="d-block w-100 height2" alt="Homeimg2">
-      </div> -->
-      <div class="carousel-item">
-        <img src="{%static 'Homeimg3.jpg'%}" class="d-block w-100 height3" alt="Homeimg3">
+      <div class="carousel-item padding:75px">
+        <img src="{%static 'homeimg10bbb.jpg'%}" class="d-block w-100 height2" alt="homeimg10bbb">
       </div>
+      {%comment%}
+      <div class="carousel-item">
+        <img src="{%static 'Homeimg3a.jpg'%}" class="d-block w-100 height3" alt="Homeimg3a">
+      </div>
+      {% endcomment %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,11 +33,21 @@
 
   <br><br> <br>
   <!-- <div class="container-fluid"> -->
+    <div padding-top: 25px >
       <h1> KNEE DEFORMITY DETECTION </h1>
       <p> <h4>Knee deformity detection is web application in which knee deformity like genu valgum(knock-knees) and genu varum(bow-legs) are detected. <br> The deformity is detected by measuring the angle between the leg. <br> For this purpose, the application needs a webcam to capture the image of the person.After the image is taken application start it process and show the processed image with angle on it on the screen. And then one can note the angle and fill the form which will predict the deformity.</h4>
       </p>
+    </div >
+
+    <h2 id="valgum">Contents</h2>
+    <li> <a href="#gvalgum">What is Genu valgum Deformity?</a> </li>
+    <li> <a href="#gvarum">What is Genu Varum Deformity?</a> </li>
+    <li> <a href="#howtodetect">How to detect?</a> </li>
+    <li> <a href="#Livedetect">Live Detection</a> </li>
+    <li> <a href="#Imagedetect">Image Detection</a> </li>
+    <li> <a href="#note">For the correct prediction one need to fulfill the following condition</a> </li>
       <br><br>
-      <h2>What is Genu valgum Deformity?</h2>
+      <h2 id="gvarum">What is Genu valgum Deformity?</h2>
       <p>
         <h4>
         Genu valgum, known as knock-knees, is a knee misalignment that turns your knees inward. <br> When people with knock-knees stand up with their knees together, there’s a gap of 3 inches or more between their ankles.
@@ -49,7 +61,7 @@
       <!-- <img src="{%static 'Homeimg5.jpg'%}" class="d-block w-100 height4" alt="Homeimg5"> -->
 
       <br>
-      <h2>What is Genu Varum Deformity?</h2>
+      <h2 id="howtodetect">What is Genu Varum Deformity?</h2>
       <p>
         <h4>
         Bow legs (genu varum) is a condition where one or both of your child’s legs curve outward at the knees. <br> This creates a wider space than normal between the knees and lower legs.
@@ -65,23 +77,28 @@
 
       <!-- <img src="{%static 'Homeimg4.jpg'%}" class="d-block w-100 height4" alt="Homeimg4"> -->
 
-      <h4> How to detect?</h4>
+      <h2 id="Livedetect">  How to detect? </h2>
+      
+        <h4>
+         The application is provided with two features
+        </h4>
       <ol style="list-style-type:number">
-        The application is provided with two features 
-        <li> Live Detection</li>
-        <li> Image Detection</li>
+        <h4>
+          <li> Live Detection</li>
+          <li> Image Detection</li>
+        </h4>
       </ol>
 
       
      
-      <h2> <b><u>1. Live Detection:</u></b> </h2> 
+      <h2 id="ImageDetect"> Live Detection: </h2> 
       <p>
         <h4>
           In this feature the application will process the webcam continuously and will provide the continuous video on the screen. The Video streaming will only be stop by changing to other tab. <br> This feature is recommended to two users where one will stand in front of webcam and other will note the angle and then fill the prediction form.
         </h4>
       </p>
       <br>
-      <h2><b><u>2. Image Detection:</u></b></h2> 
+      <h2 >Image Detection:</h2> 
       <p>
         <h4>
           In this feature the application will process the webcam for 5 second and then the still and processed image will appear on the screen. One can note the angle from the screen and can fill in the form to predict the deformity. This feature is recommended to single user who can stand still for 5 sec in front of the webcam and then the processed image will appear and then note the angle and fill the form.
@@ -89,19 +106,21 @@
       </p>
       
       <br>
-      <ol style="list-style-type:number">
+      
         <h2><b><u><i>NOTE:</i></u></b></h2>
-        <h3>For the correct prediction one need to fulfill the following condition. </h3> 
-        <li> One need to stand still in normal pose (refer the image here).</li>
-        <li>One need to stand in a way that his/her full body is seen on the screen (refer the image here).
-          <div class="card" style="width: 18rem;">
-            <img src="{%static 'FF.jpg'%}" class="card-img-top w-200" alt="FFimgposition">
-          </div>
+        <h3 id="note">For the correct prediction one need to fulfill the following condition. </h3> 
+        <ol style="list-style-type:number">
+        <h4>
+        <li> One need to stand still in normal pose <a href="/page1">(refer the image here).</a></li>
+        <li>One need to stand in a way that his/her full body is seen on the screen <a href="/page2">(refer the image here).</a>
+          
         </li>
-        <li>One need to dress in a way that his /her leg is visible (refer the image here).</li>
+        <li>One need to dress in a way that his /her leg is visible <a href="/page3">(refer the image here).</a>
+        </li>
         <li>And provide the correct birth year in order to produce a correct prediction.</li>
-        <li>The deformity can be corrected by doing some exercise or surgery if the deformity is especially present in child. So, one need to go to the doctor for the further treatment.</li>
+        <li>The deformity can be corrected by doing some exercises or by performing surgery if the deformity is especially present in childrens. So, one need to go to the doctor for the further treatment.</li></h4>
       </ol>
+    
 
      
       
@@ -111,6 +130,5 @@
   <!-- </div> -->
 </div>
  
-
 {% endblock body %}
 

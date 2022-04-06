@@ -34,7 +34,8 @@ urlpatterns = [
     path('logout',views.handleLogout, name='handleLogout'),
  
     # # #User Profile url
-    path('UserProfile',views.UserProfile,name='UserProfile'),
+    path('UserProfile1',views.UserProfile1,name='UserProfile1'),
+    path('UserProfile2',views.UserProfile2,name='UserProfile2'),
 
     #Storing user deformity result
     # path('live_Res',views.live_Res, name='live_Res'),
@@ -43,7 +44,11 @@ urlpatterns = [
 
     # Forget and change password urls  
     path('changepass/<str:id>/',views.changepassword,name="changepassword"),
-    path('forgetpassword/',views.fpass,name='fpass')
+    path('forgetpassword/',views.fpass,name='fpass'),
+
+    path('page1',views.page1,name='page1'),
+    path('page2',views.page2,name='page2'),
+    path('page3',views.page3,name='page3')
 ]
 
 
