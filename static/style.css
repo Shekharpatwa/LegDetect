@@ -1,6 +1,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 
+/* .container{
+  background:linear-gradient(70deg,blue,pink)
+} */
+
+/* Text-shadow */
+h1{
+  text-shadow: 2px 4px rgb(77, 73, 154);
+}
+
+h2{
+  text-shadow: 2px 2px rgb(113, 71, 152);
+}
+
+h4{
+  text-shadow: 2px 2px #8c9fc4;
+}
+
+ol{
+  text-shadow: 2px 2px #8c9fc4;
+}
+p{
+  text-shadow: 2px 2px #8c9fc4;
+}
+a{
+  text-shadow: 1px 1px #8c9fc4;
+}
+
 *{
   font-family: 'Bree Serif', serif;
 }
@@ -16,7 +43,118 @@
 
 /* footer  */
 .footer{
-  background: aqua;
+  /* background: aqua; */
   color: rgb(219, 9, 9);
-  /* border-radius: 2rem; */
+  background:linear-gradient(70deg,blue,pink);
+}
+
+/* Homepage */
+.home1{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  padding-left: 73px;
+  padding-right: 70px;
+  /* box-shadow: 10px 13px rgb(60, 60, 102); */
+  /* box-shadow: offset-x offset-y color; */
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+.home2{
+  border-radius: 1rem;
+  background: rgba(247, 247, 38, 0.929);
+  padding-left: 73px;
+  padding-right: 70px;
+  box-shadow: 1px 16px 33px 29px rgb(222 236 38);
+}
+
+/* Genu Valgum */
+.gvalgum1{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  padding-left: 73px;
+  padding-right: 70px;
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Genu Varum */
+.gvarum1{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  padding-left: 73px;
+  padding-right: 70px;
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Videos  */
+.videos{
+  background: rgb(188, 192, 196);
+  border-radius: 1rem;
+
+}
+
+/* Treatment Valgum */
+.valgt1{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  padding-left: 73px;
+  padding-right: 70px;
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Treatment varum */
+.vart1{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  padding-left: 73px;
+  padding-right: 70px;
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* UserProfile1 */
+.userP1{
+  border-radius: 1rem;
+  background: rgb(226 230 234);
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  /* background:linear-gradient(70deg,blue,pink); */
+}
+
+/* UserProfile2 */
+.userP2{
+  border-radius: 1rem;
+  background: rgb(226 230 234);
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Hospitals */
+.hosp1{
+  border-radius: 1rem;
+  background: rgb(226 230 234);
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Detect Form  */
+.detectform{
+  background: rgb(226 230 234);
+  border-radius: 1rem;
+  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+}
+
+/* Page1 */
+.page1a{
+  background:linear-gradient(70deg,#304352,#d7d2cc);
+  border-radius: 1rem;
+
+}
+
+/* Page2 */
+.page2a{
+  background:linear-gradient(70deg,#304352,#d7d2cc);
+  border-radius: 1rem;
+
+}
+
+/* Page3 */
+.page3a{
+  background:linear-gradient(70deg,#304352,#d7d2cc);
+  border-radius: 1rem;
 }

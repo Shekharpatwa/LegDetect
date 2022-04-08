@@ -171,7 +171,6 @@ def UserProfile1(request):
 	allresult = ImageRes.objects.all().filter(name = request.user)
 	
 	context = {'UserProfile1': allresult}
-	print(context)
 	
 	return render(request,'UserProfile1.html',context)
 

@@ -4,8 +4,10 @@
 {% load static %}
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
 
 <div class="container">
+
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -14,11 +16,7 @@
       <div class="carousel-item padding:75px">
         <img src="{%static 'homeimg10bbb.jpg'%}" class="d-block w-100 height2" alt="homeimg10bbb">
       </div>
-      {%comment%}
-      <div class="carousel-item">
-        <img src="{%static 'Homeimg3a.jpg'%}" class="d-block w-100 height3" alt="Homeimg3a">
-      </div>
-      {% endcomment %}
+
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,12 +30,12 @@
 
 
   <br><br> <br>
-  <!-- <div class="container-fluid"> -->
-    <div padding-top: 25px >
+  <div class="container-fluid home1 home1a">
+
       <h1> KNEE DEFORMITY DETECTION </h1>
       <p> <h4>Knee deformity detection is web application in which knee deformity like genu valgum(knock-knees) and genu varum(bow-legs) are detected. <br> The deformity is detected by measuring the angle between the leg. <br> For this purpose, the application needs a webcam to capture the image of the person.After the image is taken application start it process and show the processed image with angle on it on the screen. And then one can note the angle and fill the form which will predict the deformity.</h4>
       </p>
-    </div >
+    
 
     <h2 id="valgum">Contents</h2>
     <li> <a href="#gvalgum">What is Genu valgum Deformity?</a> </li>
@@ -104,9 +102,10 @@
           In this feature the application will process the webcam for 5 second and then the still and processed image will appear on the screen. One can note the angle from the screen and can fill in the form to predict the deformity. This feature is recommended to single user who can stand still for 5 sec in front of the webcam and then the processed image will appear and then note the angle and fill the form.
         </h4>
       </p>
+  </div>
+  <br>
       
-      <br>
-      
+    <div class="home2 home2b">
         <h2><b><u><i>NOTE:</i></u></b></h2>
         <h3 id="note">For the correct prediction one need to fulfill the following condition. </h3> 
         <ol style="list-style-type:number">
@@ -120,15 +119,19 @@
         <li>And provide the correct birth year in order to produce a correct prediction.</li>
         <li>The deformity can be corrected by doing some exercises or by performing surgery if the deformity is especially present in childrens. So, one need to go to the doctor for the further treatment.</li></h4>
       </ol>
-    
+      
+    </div>
 
-     
-      
-      
-      
-      
-  <!-- </div> -->
+    <br><br>
 </div>
  
+<footer> 
+  <div class="footer mt-auto">
+    <center>
+      <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+      <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+    </center>
+  </div>
+</footer>
 {% endblock body %}
 

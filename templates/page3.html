@@ -3,10 +3,21 @@
 {% block title %} Photo Detection {% endblock title %}
 {% load static%}
 {% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
 <br><br><br>
-<center> <div class="card" style="width: 18rem;">
-       <img src="{%static 'woman-in-saree.jpg'%}" class="card-img-top w-200" alt="FFimgposition"> 
+<div class="container page3a">
+  <center> <div class="card" style="width: 18rem;">
+        <img src="{%static 'woman-in-saree.jpg'%}" class="card-img-top w-200" alt="FFimgposition"> 
+      </div>
+  </center>
+</div>
+<footer> 
+    <div class="footer fixed-bottom">
+      <center>
+        <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+        <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+      </center>
     </div>
-</center>
-      
+  </footer>
 {% endblock body %}

@@ -5,7 +5,7 @@
 {% load static%}
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
 
 <h1 style="text-align: center;">Body DETECTION By Taking Photo Using Webcam</h1>
 <div id="img">
@@ -13,15 +13,9 @@
     <img src="{% url 'image_feed' %}">
 </div>
 </div>
+<br><br>
 
-<!-- <div id="spinner">
-    <div class="d-flex justify-content-center">
-        <div class="spinner-border text-success" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
-</div> -->
-<div class="container detectform">
+<div class="container detectform detectform">
     <h2>For Detection fill the details </h2>
     <form action="/Detection_img" method="POST">
         {% csrf_token %}
@@ -64,8 +58,9 @@
         <br> <br> 
         <button type="submit" class="btn btn-primary">Submit</button>
 
-        <button type="reset"  class="btn btn-danger">Reset</button>
     </form>
+
+    <br><br><br>
 </div>
 
 <script>
@@ -188,4 +183,12 @@
 
 </script>
 
+<footer> 
+    <div class="footer fixed-bottom">
+      <center>
+        <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+        <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+      </center>
+    </div>
+  </footer>
 {% endblock body %}

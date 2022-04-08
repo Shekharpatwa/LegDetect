@@ -4,12 +4,14 @@
 {% load static%}
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
 
 
 <h1 style="text-align: center;">Live Body DETECTION Using Webcam </h1>
 <div style="justify-content: center; display: flex; margin-top: 30px;"><img src="{% url 'video_feed' %}">
 </div>
-<div class="container detectform">
+<br><br>
+<div class="container detectform detectform">
     <h2>For Detection fill the details </h2>
     <form method="POST" action="/Detection_Live">
         {% csrf_token %}
@@ -41,14 +43,15 @@
         <span id="LiveRes2" name="LiveRes2"></span>
 
         <br>
-        <br>
+        <br><br> <br> 
         <button type="Submit" name="submit" id="btn1" class="btn btn-primary">Submit</button> 
 
-        <button type="reset"  class="btn btn-danger">Reset</button>
 
     </form>
-</div>
 
+    <br><br><br>
+</div>
+<br><br>
 <script>
     var btn1 = document.getElementById("btn1");
     btn1.addEventListener("click",e=>{
@@ -131,4 +134,12 @@
     }  
 </script>
 
+<footer> 
+    <div class="footer fixed-bottom ">
+      <center>
+        <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+        <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+      </center>
+    </div>
+  </footer>
 {% endblock body %}

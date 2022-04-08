@@ -1,0 +1,44 @@
+/* Homepage */
+.home1a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.home2b{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Genu Valgum */
+.gvalgum1a{
+    background: rgb(226 230 234);
+    border-radius: 1rem;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* Genu Varum */
+.gvarum1a{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+
+
+/* Treatment Valgum */
+.valgt1a{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* Treatment varum */
+.vart1a{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* UserProfile1 */
+/* UserProfile2 */
+
+.detectform{
+    margin-left: 64px;
+}

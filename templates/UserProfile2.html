@@ -3,9 +3,10 @@
 {% block title %}Detection {% endblock title %}
 {%load static%}
 {% block body %}
-
-<div class="container my-3">
-
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<br><br>
+<div class="container my-3 userP2">
+  <br>
     {% if user.is_authenticated %}
         <div class="container">    
             <div class="mb-3">
@@ -52,6 +53,13 @@
     
 </div>
 
-
+<footer> 
+  <div class="footer fixed-bottom">
+    <center>
+      <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+      <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+    </center>
+  </div>
+</footer>
 
 {% endblock%}

@@ -223,3 +223,14 @@ def Detection_Live(request):
 
         </div>
       </footer>
+
+{% comment %} <iframe width="900" height="506" src="https://www.youtube.com/embed/FDsftw2yrAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+
+{% comment %} <iframe width="590" height="360" src="https://www.youtube.com/embed/lntFFGvq8MM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+{% comment %} 
+<iframe width="590" height="360" src="https://www.youtube.com/embed/rihfPP6BnN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+
+{% comment %} <iframe width="900" height="506" src="https://www.youtube.com/embed/SRinXGN3bZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+
+
+{% comment %} <iframe width="900" height="506" src="https://www.youtube.com/embed/aHho-ZpSXlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}

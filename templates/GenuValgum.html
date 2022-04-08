@@ -6,10 +6,12 @@
 
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
+
 {% comment %} <img class="bgimg" src="{% static 'img1.jpg'%}"> {% endcomment %}
-<div id="gvalgum" class="container gvalgum">
+<div id="gvalgum" class="container">
   <br><br><br>
-    <div class="container gvalcontent">
+    <div class="container-fluid gvalcontent gvalgum1 gvalgum1a">
       <h2>Contents</h2>
       <li> <a href="#gvalgum"> What is Genu Valgum Deformity?</a> </li>
       <li> <a href="#symptoms"> What are the symptoms of genu valgum ?</a> </li>
@@ -58,16 +60,21 @@
             </ol>
 
             Stressed ligaments and muscles can also cause pain in your hips, ankles, or feet.If only one knee is out of line, your stance may be unbalanced.
-
         </p>
  
-        <br>
-        
     </div>
 
 
 
 </div>
 
+<footer> 
+  <div class="footer mt-auto">
+    <center>
+      <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+      <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+    </center>
+  </div>
+</footer>
 {% endblock body %}
 

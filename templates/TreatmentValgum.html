@@ -6,28 +6,28 @@
 
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-<div class="container valgumtreat">
-    {% comment %} <div class="video">
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/85gA9a4AHh4">
-        </iframe>
-        <br><br><br>
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/TRCx7_waDsA">
-        </iframe>
-        <br><br><br>
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/T9I62pLgwXQ">
-        </iframe> {% endcomment %}
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
 
-    {% comment %} </div> {% endcomment %}
-    <div class=" container valgumtreatcont1">
+<div class="container valgumtreat">
+<br><br><br><br>
+   
+    
+    <div class=" container valgumtreatcont1 valgt1 valgt1a">
+        <h2>Contents</h2>
+        <li> <a href="#Regular">Regular Exercise</a> </li>
+        <li> <a href="#sidelung">Side Lungs</a> </li>
+        <li> <a href="#Lying">Lying Abduction</a> </li>
+        <li> <a href="#Wallsquat">Wall Squat</a> </li>
+        <li> <a href="#weight">Weight Loss</a> </li>
+        <li> <a href="#orthotics">Orthotics</a> </li>
+        <li> <a href="#surgery">Surgery</a> </li>
+        <li> <a href="#videos">Videos you can refer to do excercise</a> </li>
          <h1>Genu Valgum</h1>
          <p> Genu valgum, or knock-knee, is a condition where the knees touch but the ankles do not.
              It appears most frequently in young children and can be concerning for parents who may know little about the condition. 
         </p>
         <br>
-        <h2>Treatment</h2>
+        <h2 id="treat">Treatment</h2>
 
         <p>
             Treatment for genu valgum will largely depend on the cause and severity of the condition.
@@ -35,14 +35,14 @@
             Typical treatment options may include some of the following:
         </p>
 
-        <h2>Medications and supplements</h2>
+        <h2 id="Regular">Medications and supplements</h2>
 
         <p>
             If an underlying disease is causing genu valgum, a doctor will need to treat the disease first to correct the leg alignment.
             They may use medications and supplements as part of a treatment plan.
         </p>
 
-        <h2>Regular Exercise</h2>
+        <h2 id="sidelung">Regular Exercise</h2>
         <p>
             Several studies indicateTrusted Source that exercise may help strengthen the muscles of the legs and could improve posture and balance in people with knock-knee.
             Research also shows that this may applyTrusted Source to young adults with knock-knee, but there is not enough research to indicate that exercise corrects the condition in children.
@@ -54,7 +54,7 @@
         </p>
 
         <div class="c1">
-            <h2>Side Lungs</h2>
+            <h2 id="Lying">Side Lungs</h2>
             <ol style="list-style-type:number">
                 <li>Stand with the feet hip-width apart and place the arms in front of the chest.</li>
                 <li>Step widely sideways to the left.</li>
@@ -69,7 +69,7 @@
 
             <br><br>
 
-            <h2>Lying Abduction</h2>
+            <h2 id="Wallsquat">Lying Abduction</h2>
             <ol style="list-style-type:number">
                 <li>Lie on the left side with the legs one on top of the other.</li>
                 <li>Lift the right leg at a 45-degree angle and hold for 1 second. Then lower the leg.</li>
@@ -82,7 +82,7 @@
 
             <br><br>
 
-            <h2>Wall Squat</h2>
+            <h2 id="weight">Wall Squat</h2>
             <ol style="list-style-type:number">
                 <li>Stand straight against a wall while keeping the body slightly away from the wall and the feet shoulder-width apart.</li>
                 <li>Squat to no more than 90 degrees and hold for 5–10 seconds while keeping the abdominal muscles contracted.</li>
@@ -97,7 +97,7 @@
 
         </div>
 
-        <h2>Weight Loss</h2>
+        <h2 id="orthotics">Weight Loss</h2>
         <p>
             If a person is carrying excessive body weight, it can contribute to genu valgum.
             Extra weight puts additional strain on the legs and knees, which can causeTrusted Source knock-knee to worsen.
@@ -105,7 +105,7 @@
 
         </p>
 
-        <h2>Orthotics</h2>
+        <h2 id="surgery">Orthotics</h2>
         <p>
             Orthotics are inserts placed in the shoes to help correct a person’s gait or the way their foot strikes the ground when they walk or run.
             This may beTrusted Source especially helpful for people with genu valgum who have one leg that is longer than the other.
@@ -129,102 +129,58 @@
             Depending on the type of procedure, whether or not the patient has medical insurance, and the type of insurance, the cost of any surgical procedure can vary significantly.
             It can also depend on the severity of the patient’s symptoms.
         </p>
-
+        
+        
      </div>
-
-        {% comment %} <div class="video">
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/85gA9a4AHh4">
-            </iframe>
-            <br><br><br>
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/TRCx7_waDsA">
-            </iframe>
-            <br><br><br>
-            <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/T9I62pLgwXQ">
-            </iframe>
-        </div> {% endcomment %}
-     
-        {% comment %} <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card text-white bg-success">
+     <div class="album py-5 bg-light videos">
+        <div class="container my-3 videos">
+            <h1 class="my-4 text-center">Videos you can refer to do excercise</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                <div class="card text-white bg-primary shadow-sm">
                     <iframe height="315" src="https://www.youtube.com/embed/85gA9a4AHh4">
                     </iframe>
                     
                     <div class="card-body">
-                        <h5 class="card-title text-dark">Home Excercise</h5>   
+                        <h5 class="card-title">Home Excercise for Genu Valgum</h5>   
                     </div> 
-                        
                 </div>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-                <div class="card text-white bg-success">
-                    <iframe height="315" src="https://www.youtube.com/embed/TRCx7_waDsA">
-                    </iframe>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title text-dark">Home Excercise</h5>   
-                    </div> 
-                        
                 </div>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-                <div class="card text-white bg-success">
-                    <iframe height="315" src="https://www.youtube.com/embed/T9I62pLgwXQ">
-                    </iframe>
-                    
-                    <div class="card-body">
-                        <h5 class="card-title text-dark">Home Excercise</h5>   
-                    </div> 
-                        
-                </div>
-            </div>
-        </div> {% endcomment %}
-
-        <div class="album py-5 bg-light">
-            <div class="container my-3">
-                <h1 class="my-4 text-center">Videos you can refer to do excercise</h1>
-            
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
+                <div class="col">
                     <div class="card text-white bg-primary shadow-sm">
-                        <iframe height="315" src="https://www.youtube.com/embed/85gA9a4AHh4">
+                        <iframe height="315" src="https://www.youtube.com/embed/TRCx7_waDsA">
+                        </iframe>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Home Excercise for Genu Valgum</h5>   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white bg-primary shadow-sm">
+                        <iframe height="315" src="https://www.youtube.com/embed/T9I62pLgwXQ">
                         </iframe>
                         
                         <div class="card-body">
                             <h5 class="card-title">Home Excercise for Genu Valgum</h5>   
                         </div> 
                     </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-white bg-primary shadow-sm">
-                            <iframe height="315" src="https://www.youtube.com/embed/TRCx7_waDsA">
-                            </iframe>
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">Home Excercise for Genu Valgum</h5>   
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card text-white bg-primary shadow-sm">
-                            <iframe height="315" src="https://www.youtube.com/embed/T9I62pLgwXQ">
-                            </iframe>
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">Home Excercise for Genu Valgum</h5>   
-                            </div> 
-                        </div>
-                    </div>
-
-
                 </div>
-        </div>
+
+
+            </div>
+    </div>
+        
+        
     </div>
  </div>
-
+ <footer> 
+    <div class="footer mt-auto">
+      <center>
+        <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
+        <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
+      </center>
+    </div>
+  </footer>
 {% endblock body %}
