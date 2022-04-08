@@ -7,13 +7,38 @@
 
 <br><br><br>
 <div class="container page1a">
-  <center>
+  {% comment %} <center>
       <div class="card" style="width: 18rem;padding-top: 25px;">
           <img src="{%static 'FF.jpg'%}" class="card-img-top w-200" alt="FFimgposition">
       </div>
+  </center> {% endcomment %}
+  <center>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card text-white bg-success" style="width: 18rem;">
+                <img src="{%static 'menwrongpose.jpg'%}" class="card-img-top w-200" alt="menwrongpose">
+
+                <div class="card-body">
+                <h2>Wrong Pose </h2>
+                <img src="https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png"/>
+                </div>
+                    
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="card text-white bg-success" style="width: 18rem;">
+              <img src="{%static 'mencorrectpose1.jpg'%}" class="card-img-top w-200" alt="mencorrectpose">
+
+              <div class="card-body">
+                <h2>Correct Pose </h2>
+                <img src="https://img.icons8.com/emoji/48/000000/check-mark-emoji.png"/>
+              </div>
+                  
+          </div>
+        </div>
+      </div>
   </center>
-
-
 </div>
 <footer> 
     <div class="footer fixed-bottom">
