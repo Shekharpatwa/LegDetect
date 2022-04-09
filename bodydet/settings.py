@@ -159,9 +159,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shekharpatwa2001@gmail.com'
-EMAIL_HOST_PASSWORD = 'patwa@1201'
-
+EMAIL_HOST_USER = os.environ.get('EM_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EM_PASS')
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -177,11 +176,3 @@ EMAIL_HOST_PASSWORD = 'patwa@1201'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-#EMAIL SMTP
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EM_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EM_PASS')
