@@ -39,7 +39,8 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark bg-gradient">
         <div class="container-fluid">
           <img src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/25/000000/external-knee-anatomy-vitaliy-gorbachev-blue-vitaly-gorbachev.png"/>
-          <a class="navbar-brand" href="{% url 'Homepage' %}">Knee Deformity Detection</a>
+          <a class="navbar-brand" href="{% url 'Homepage' %}" style=" color: white;
+          text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Knee Deformity Detection</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -116,8 +117,9 @@
 
           <ul class="navbar-nav ml-auto mr-2">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://img.icons8.com/ios-glyphs/25/000000/checked-user-male.png"/>
+              <a class="nav-link dropdown-toggle nbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" color: lightblue;
+              text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+                <img src="https://img.icons8.com/external-obvious-flat-kerismaker/30/000000/external-user-profile-online-shopping-flat-obvious-flat-kerismaker.png"/>
                 Welcome {{request.user}} 
               </a>
              

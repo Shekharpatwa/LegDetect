@@ -7,11 +7,15 @@
 
 /* Text-shadow */
 h1{
-  text-shadow: 2px 4px rgb(77, 73, 154);
+  /* text-shadow: 2px 2px rgb(113, 71, 152); */
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 h2{
-  text-shadow: 2px 2px rgb(113, 71, 152);
+  /* text-shadow: 2px 2px rgb(113, 71, 152); */
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 h4{
@@ -54,9 +58,10 @@ a{
   border-radius: 1rem;
   padding-left: 73px;
   padding-right: 70px;
-  /* box-shadow: 10px 13px rgb(60, 60, 102); */
-  /* box-shadow: offset-x offset-y color; */
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  /* box-shadow: -3px -25px 33px 36px grey; */
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 .home2{
@@ -64,7 +69,10 @@ a{
   background: rgba(247, 247, 38, 0.929);
   padding-left: 73px;
   padding-right: 70px;
-  box-shadow: 1px 16px 33px 29px rgb(222 236 38);
+  /* box-shadow: 1px 16px 33px 29px rgb(222 236 38); */
+  box-shadow:         inset 0 0 10px  rgb(240, 186, 79);
+  -moz-box-shadow:    inset 0 0 10px  rgb(201, 209, 95);
+   -webkit-box-shadow: inset 0 0 83px rgb(209, 175, 95);
 }
 
 /* Genu Valgum */
@@ -73,7 +81,10 @@ a{
   border-radius: 1rem;
   padding-left: 73px;
   padding-right: 70px;
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  /* box-shadow: -3px -25px 33px 36px rgb(117, 156, 170); */
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Genu Varum */
@@ -82,7 +93,10 @@ a{
   border-radius: 1rem;
   padding-left: 73px;
   padding-right: 70px;
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  /* box-shadow: -3px -25px 33px 36px rgb(117, 156, 170); */
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Videos  */
@@ -98,7 +112,9 @@ a{
   border-radius: 1rem;
   padding-left: 73px;
   padding-right: 70px;
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Treatment varum */
@@ -107,14 +123,18 @@ a{
   border-radius: 1rem;
   padding-left: 73px;
   padding-right: 70px;
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* UserProfile1 */
 .userP1{
   border-radius: 1rem;
   background: rgb(226 230 234);
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
   /* background:linear-gradient(70deg,blue,pink); */
 }
 
@@ -122,21 +142,27 @@ a{
 .userP2{
   border-radius: 1rem;
   background: rgb(226 230 234);
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Hospitals */
 .hosp1{
   border-radius: 1rem;
   background: rgb(226 230 234);
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Detect Form  */
 .detectform{
   background: rgb(226 230 234);
   border-radius: 1rem;
-  box-shadow: -3px -25px 33px 36px rgb(117, 156, 170);
+  box-shadow:         inset 0 0 10px #000000;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 83px #000000;
 }
 
 /* Page1 */
