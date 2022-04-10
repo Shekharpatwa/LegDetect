@@ -12,6 +12,9 @@ class Prof(models.Model):
     user = models.CharField(max_length=255)
     forget_token = models.CharField(max_length=1000)
 
+    def _str_(self): 
+        return "{}" .format(self.user)
+
 
 # For Storing user Results of Live Detection
 class ImageRes(models.Model):
@@ -20,8 +23,14 @@ class ImageRes(models.Model):
     ImgRightAngle = models.CharField(max_length=255)
     date = models.DateField()
 
+    def _str_(self): 
+        return "{}" .format(self.name)
+
 class LiveRes(models.Model):
     name = models.CharField(max_length=255)
     LiveLeftAngle = models.CharField(max_length=255)
     LiveRightAngle = models.CharField(max_length=255)
     date = models.DateField()
+
+    def _str_(self): 
+        return "{}" .format(self.name)

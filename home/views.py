@@ -67,6 +67,16 @@ def handleSignup(request):
 			print(messages.error(request, 'Username should only contain letters and numbers'))
 			return redirect('Homepage')
 
+		if len(pass1) <8:
+			messages.error(request, 'Password must be greater than 8 or equal to 8 charaters')
+			print(messages.error(request, 'Password must be greater than 8 or equal to 8 charaters'))
+			return redirect('Homepage')
+
+		if len(pass1) >15:
+			messages.error(request, 'Password must not be greater 15 characters')
+			print(messages.error(request, 'Password must not be greater 15 characters'))
+			return redirect('Homepage')
+
 	
 		# #password should match
 		if pass1 != pass2:
@@ -247,5 +257,14 @@ def Detection_Live(request):
 def Hospitals(request):
 	return render(request,'Hospitals.html')
 
+def chartProfile1(request):
+	allresult = ImageRes.objects.all().filter(name = request.user)
+	context = {'chartProfile1': allresult}
+	return render(request,'chartProfile1.html',context)
+
+def chartProfile2(request):
+    allresult = LiveRes.objects.all().filter(name = request.user)
+    context = {'chartProfile2': allresult}
+    return render(request,'chartProfile2.html',context)
 
 

@@ -41,9 +41,14 @@ urlpatterns = [
     path('changepass/<str:id>/',views.changepassword,name="changepassword"),
     path('forgetpassword/',views.fpass,name='fpass'),
 
+    # Position image urls 
     path('page1',views.page1,name='page1'),
     path('page2',views.page2,name='page2'),
-    path('page3',views.page3,name='page3')
+    path('page3',views.page3,name='page3'),
+
+    # Chart Page urls 
+    path('chartProfile1',views.chartProfile1,name='chartProfile1'),
+    path('chartProfile2',views.chartProfile2,name='chartProfile2'),
 ]
 
 
