@@ -8,25 +8,7 @@
 
 <div class="container">
 
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{%static 'Homeimg1.jpg'%}" class="d-block w-100 height1" alt="Homeimg1">
-      </div>
-      <div class="carousel-item padding:75px">
-        <img src="{%static 'homeimg10bbb.jpg'%}" class="d-block w-100 height2" alt="homeimg10bbb">
-      </div>
-
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  
 
 
   <br><br> <br>
@@ -37,7 +19,27 @@
       <p> <h4>Knee deformity detection is web application in which knee deformity like genu valgum(knock-knees) and genu varum(bow-legs) are detected. <br> The deformity is detected by measuring the angle between the leg. <br> For this purpose, the application needs a webcam to capture the image of the person.After the image is taken application start it process and show the processed image with angle on it on the screen. And then one can note the angle and fill the form which will predict the deformity.</h4>
       </p>
     
-
+      <br><br>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{%static 'Homeimg1.jpg'%}" class="d-block w-100 height1" alt="Homeimg1">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'homeimg10bbb.jpg'%}" class="d-block w-100 height2" alt="homeimg10bbb">
+          </div>
+    
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <br><br>
     <h2 id="valgum">Contents</h2>
     <li> <a href="#gvalgum">What is Genu valgum Deformity?</a> </li>
     <li> <a href="#gvarum">What is Genu Varum Deformity?</a> </li>
@@ -45,6 +47,8 @@
     <li> <a href="#Livedetect">Live Detection</a> </li>
     <li> <a href="#Imagedetect">Image Detection</a> </li>
     <li> <a href="#note">For the correct prediction one need to fulfill the following condition</a> </li>
+
+    
       <br><br>
       <h2 id="gvarum">What is Genu valgum Deformity?</h2>
       <p>
@@ -108,7 +112,8 @@
       
     <div class="home2 home2b">
         <h2><b><u><i>NOTE:</i></u></b></h2>
-        <h3 id="note">For the correct prediction one need to fulfill the following condition. </h3> 
+        
+        <h3 id="note" style=" text-shadow: 2px 2px #8c9fc4;">For the correct prediction one need to fulfill the following condition. </h3> 
         <ol style="list-style-type:number">
         <h4>
         <li> One need to stand still in normal pose <a href="/page1">(refer the image here).</a></li>
@@ -119,11 +124,12 @@
         </li>
         <li>And provide the correct birth year in order to produce a correct prediction.</li>
         <li>The deformity can be corrected by doing some exercises or by performing surgery if the deformity is especially present in childrens. So, one need to go to the doctor for the further treatment.</li></h4>
+        <hr> <h3 style=" text-shadow: 2px 2px #8c9fc4;"> To use the webcam feature You need to Sign Up and Login in the web application.</h3>
       </ol>
       
     </div>
 
-    <br><br>
+    <br>
 </div>
  
 <footer> 

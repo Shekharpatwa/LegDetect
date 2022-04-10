@@ -10,8 +10,10 @@
 <h1 style="text-align: center;">Body DETECTION By Taking Photo Using Webcam</h1>
 <div id="img">
     <div class="imgdetect" style="justify-content: center; display: flex; margin-top: 30px;">
-    <img src="{% url 'image_feed' %}">
-</div>
+        <button id="btndetect" class="btn btn-success" >Start Camera</button>
+
+    <!-- <img src="{% url 'image_feed' %}"> -->
+    </div>
 </div>
 <br><br>
 
@@ -51,11 +53,7 @@
 
         <label name="imgRes2" id="imgRes2"></label>
 
-        <!-- <label name="RESULT" id="RESULT"></label> -->
-        <br>
-        <br>
-        <!-- <button type="Submit" name="submit" id="btn1" class="btn btn-primary"> Save the data </button>  -->
-        <br> <br> 
+        <br><br><br> <br> 
         <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
@@ -65,29 +63,11 @@
 
 <script>
 
-    // const spinner = document.getElementById('spinner');
-    // const imgdet = document.getElementById('img');
+    btndetect.addEventListener("click",e=>{
 
-    //     $.ajax({
-    //         type: 'GET',
-    //         url:'/Detection_img',
-    //         success: function(res){
-    //             setTimeout(() => {
-
-    //                 spinner.classList.add('no-display')
-    //                 console.log('success2');
-    //                 imgdet.innerHTML += `
-    //                 <div class="imgdetect" style="justify-content: center; display: flex; margin-top: 30px;">
-    //                 <img src="{% url 'image_feed' %}">
-    //                 </div>`
-    //                 // spinner.classList.add('no-display')
-    //                 // $('#spinner').hide();
-    //             },400);
-    //         },
-    //         error:function(er){
-    //             console.log('error')
-    //         },
-    //     })
+        document.getElementById("btndetect").innerHTML = ` <img src="{% url 'image_feed' %}">`
+    }) 
+    
 
     var btn1 = document.getElementById("btn1");
     btn1.addEventListener("click",e=>{
@@ -167,13 +147,6 @@
         }
                 
         }  
-
-        // let imgRes1 = document.getElementById('imgRes1').value
-        // let imgRes2 = document.getElementById('imgRes2').value
-
-
-
-        //     document.getElementById('RESULT').innerHTML = document.getElementById("imgRes1").value + document.getElementById("imgRes2").value;
 
         
 

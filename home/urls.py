@@ -26,7 +26,6 @@ urlpatterns = [
     #Detection url
     path('Detection_Live', views.Detection_Live, name='Detection_Live'),
     path('Detection_img', views.Detection_img, name='Detection_img'),
-    path('test',views.test, name='test'),
 
     #Sgnup, Login, Logout urls
     path('signup',views.handleSignup, name='handleSignup'),
@@ -37,10 +36,6 @@ urlpatterns = [
     path('UserProfile1',views.UserProfile1,name='UserProfile1'),
     path('UserProfile2',views.UserProfile2,name='UserProfile2'),
 
-    #Storing user deformity result
-    # path('live_Res',views.live_Res, name='live_Res'),
-    # path('img_Res',views.img_Res, name='img_Res'),
-    # path('testing',views.testing,name='testing'),
 
     # Forget and change password urls  
     path('changepass/<str:id>/',views.changepassword,name="changepassword"),

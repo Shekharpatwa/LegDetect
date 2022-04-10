@@ -58,20 +58,20 @@ def handleSignup(request):
 		#Username must be under 10 character
 		if len(username) > 10:
 			messages.error(request, 'Username must be under 10 character')
-			# print(messages.error(request, 'Username must be under 10 character'))
+			print(messages.error(request, 'Username must be under 10 character'))
 			return redirect('Homepage')
 		
 		#Username should be alphanumeric
 		if not username.isalnum():
 			messages.error(request, 'Username should only contain letters and numbers')
-			# print(messages.error(request, 'Username should only contain letters and numbers'))
+			print(messages.error(request, 'Username should only contain letters and numbers'))
 			return redirect('Homepage')
 
 	
 		# #password should match
 		if pass1 != pass2:
 			messages.error(request, 'Passwords do not match')
-			# print(messages.error(request, 'Passwords do not match'))
+			print(messages.error(request, 'Passwords do not match'))
 			return redirect('Homepage')
 			
 		
@@ -84,7 +84,7 @@ def handleSignup(request):
 				break
 		if y==1:
 			messages.error(request,"Username already exists")
-			# print(messages.error(request,"Email already exists"))
+			print(messages.error(request,"Username already exists"))
 			return redirect("Homepage.html")
 
 		data=User.objects.all()
@@ -95,7 +95,7 @@ def handleSignup(request):
 				break
 		if z==1:
 			messages.error(request,"Email already exists")
-			# print(messages.error(request,"Email already exists"))
+			print(messages.error(request,"Email already exists"))
 			return redirect("Homepage.html")
 
 
@@ -108,6 +108,7 @@ def handleSignup(request):
 
 		
 		messages.success(request, 'Your account has been successfully created')
+		print(messages.success(request, 'Your account has been successfully created'))
 
 		return redirect('Homepage')
 
@@ -122,10 +123,7 @@ def handleLogin(request):
 		loginusername = request.POST['loginusername']
 		loginpassword = request.POST['loginpassword']
 		
-		# mail_message = "Hello User how are you"
-		# user = User.objects.get(username=username)
-		# profile = Profile.objects.get(user=user)
-		# user_email = user.email
+
 		
 		user = authenticate(username=loginusername, password=loginpassword)
 		
@@ -136,11 +134,12 @@ def handleLogin(request):
 		if user is not None:
 			login(request, user)
 			messages.success(request, "Successfully Logged In")
+			print(messages.success(request, "Successfully Logged In"))
 			return redirect('Homepage')
 
 		else:
 			messages.error(request, "Invalid credentials, Please try again")
-			# print(messages.error(request, "Invalid credentials, Please try again"))
+			print(messages.error(request, "Invalid credentials, Please try again"))
 			return redirect('Homepage')
 
 	# return HttpResponse('handleLogin')
@@ -153,21 +152,9 @@ def handleLogout(request):
 
 	return HttpResponse('handleLogout') 
 
-	# return redirect('Homepage') 
 
-	# logout(request)
-	# return HttpResponseRedirect('Homepage')
-
-# def UserProfile(request):
-#     return render(request,'UserProfile.html')
 
 def UserProfile1(request):
-    # Reports = ImageRes.objects.all()
-    # context = {'Report':Reports}
-    # for item in Reports:
-    #    print(item.ImgLeftAngle)
-    # print(context)
-    # return render(request,'UserProfile.html')
 	allresult = ImageRes.objects.all().filter(name = request.user)
 	
 	context = {'UserProfile1': allresult}
@@ -231,34 +218,16 @@ def image_feed(request):
 	return StreamingHttpResponse(image_det(VideoImgManagers()),
 					content_type='multipart/x-mixed-replace; boundary=frame')
 
-					
-# def live_Res(request):
-#     if request.method == 'POST':
-#     	username = request.POST.get('username')
-# 	   	LiveRes1 = request.POST.get('LiveRes1')
-# 	   	LiveRes2 = request.POST.get('LiveRes2')
-# 	   	live_Res = liveResult(user=username,LiveRes1=LiveRes1,LiveRes2=LiveRes2,date=datetime.today())
-# 	   	live_Res.save()
-    
-#     return render(request, 'Detection_Live.html')  
+
 
 def Detection_img(request):
 	if request.method == "POST":
 		name = request.POST['name']
 		Langle = request.POST['Langle']
 		Rangle = request.POST['Rangle']
-		# # print(username,imgRes1,imgRes2)
-		# print(username,imgRes1,imgRes2)
-
-		# send_mail('Your result of detection',username,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
-		
 		Result = ImageRes(name=name,ImgLeftAngle=Langle,ImgRightAngle=Rangle,date=datetime.today())
 		Result.save()
 		messages.success(request,'Stored successfully') 
-
-
-
-	
 	return render(request, 'Detection_img.html') 
  
 def Detection_Live(request):
@@ -270,67 +239,13 @@ def Detection_Live(request):
     	Result = LiveRes(name=name,LiveLeftAngle=Langle,LiveRightAngle=Rangle,date=datetime.today())
     	Result.save()
     	messages.success(request,'Stored successfully') 
+    	print(messages.success(request,'Stored successfully')) 
 
     return render(request,'Detection_Live.html')
 
-# def Detection_img(request):
-# 	if request.method == 'POST':
-#     	name = request.POST.get('name')
-#     	imgRes1 = request.POST.get('imgRes1')
-#     	imgRes2 = request.POST.get('imgRes2')
-# 	    print(name)
-# 	    repo = Report(name=name)
-# 	    repo.save()
-	
-# 	return render(request,'Detection_img.html')
 
 def Hospitals(request):
 	return render(request,'Hospitals.html')
 
 
-# def test(request):
-#     if request.method == "POST":
-#     	message = request.POST['message']
-# 	    send_mail('Password Reset Request',message,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
 
-#     return render(request,'test.html')
-
-
-def test(request):
-    if request.method == "POST":
-    	message = request.POST['message']
-    	send_mail('Password Reset Request',message,settings.EMAIL_HOST_USER,['shekharpatwa2001@gmail.com'],fail_silently=False)
-    return render(request,'test.html')
-
-# def testing(request):
-#     if request.method == 'POST':
-#         # username = request.POST.get('username')
-#         # message = request.POST.get('message')
-#         username = request.POST['username']
-#         # messagea = request.POST['messagea']
-#         # LiveRes1 = request.POST.get('LiveRes1')
-#         # LiveRes2 = request.POST.get('LiveRes2')
-#         print(username)
-#         live_res = liveResult(username=username,date=datetime.today())
-#         live_Res.save()
-	
-#     return render(request,'testing.html')
-
-
-# def testing(request):
-#     if request.method == 'POST':
-#         user = request.POST['user']
-#         print(user)
-#         live_Res = liveResult(user=user,date=datetime.today())
-#         live_Res.save()
-	
-#     return render(request,'testing.html')
-
-# def testing(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         resu = request.POST.get('resu')
-#         tests = Testing(name=name,resu=resu)
-#         tests.save() 
-	
-#     return render(request,'testing.html') 

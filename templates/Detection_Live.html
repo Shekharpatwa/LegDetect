@@ -8,7 +8,11 @@
 
 
 <h1 style="text-align: center;">Live Body DETECTION Using Webcam </h1>
-<div style="justify-content: center; display: flex; margin-top: 30px;"><img src="{% url 'video_feed' %}">
+
+
+<div style="justify-content: center; display: flex; margin-top: 30px;">
+    <button id="btndetect" class="btn btn-success" >Start Video</button> 
+    {% comment %} <img src="{% url 'video_feed' %}"> {% endcomment %}
 </div>
 <br><br>
 <div class="container detectform detectform">
@@ -35,7 +39,6 @@
             <span id = "message" style="color:red"> </span> <br><br>  
         </div>  
   
-        {% comment %} <input type="submit" name="submit" onclick = "ageCalculator()" value="Predict" id="btn1"/> {% endcomment %}
         <input type="button" name="Predict" onclick = "ageCalculator()" value="Predict" id="btn1" class="btn btn-primary">
         
 
@@ -74,6 +77,11 @@
         }
        
     })
+
+    btndetect.addEventListener("click",e=>{
+        document.getElementById("btndetect").innerHTML = `<img src="{% url 'video_feed' %}">`
+    })    
+
     function ageCalculator() { 
         var l = Number(document.getElementById("Langle").value);
         var r = Number(document.getElementById("Rangle").value); 
