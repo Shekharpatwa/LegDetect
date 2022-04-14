@@ -42,7 +42,6 @@ a{
   height:400px;
 }
 
-
 /* footer  */
 .footer{
   /* background: aqua; */
@@ -200,4 +199,8 @@ a{
   box-shadow:         inset 0 0 10px #000000;
   -moz-box-shadow:    inset 0 0 10px #000000;
    -webkit-box-shadow: inset 0 0 83px #000000;
+}
+
+.Chart{
+  padding-bottom: 1rem;
 }

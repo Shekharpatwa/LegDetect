@@ -14,7 +14,6 @@ from datetime import datetime
 from django.conf import settings
 from django.core.mail import send_mail
 import uuid
-# from .models import Profile
 from .models import Prof
 
 import cv2 as cv

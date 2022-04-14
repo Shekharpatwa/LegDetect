@@ -19,6 +19,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
+
     
     
 <br> <br> <br> <br>
@@ -26,6 +28,8 @@
         $(document).ready(function(){
 
        
+        
+
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'line',
@@ -48,6 +52,7 @@
                 }],
                 
                 },
+
             
             options: {
                 elements:{
@@ -67,9 +72,14 @@
                 }
               },
         });
+
+        
     });
+
+    
         </script>
         
-    <canvas id="myChart" width="400" height="180"></canvas>
-
+    <div class="Chart chart1">
+        <canvas id="myChart" width="400" height="180"></canvas>
+    </div>
 {% endblock body%}
