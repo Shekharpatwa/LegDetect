@@ -476,7 +476,7 @@ class PoseEstimators():
 
 class VideoImgManagers():
 
-    def __init__(self,webcam_id=0):
+    def __init__(self,webcam_id=1):
         self.POSE_ESTIMATOR = PoseEstimators()
         self.video = cv.VideoCapture(webcam_id)
 

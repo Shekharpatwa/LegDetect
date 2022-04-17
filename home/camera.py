@@ -6,7 +6,7 @@ from home.poseEstimator import PoseEstimator
 
 class VideoImgManager():
 
-    def __init__(self,webcam_id=0):
+    def __init__(self,webcam_id=1):
         self.POSE_ESTIMATOR = PoseEstimator()
         self.video = cv.VideoCapture(0)
         # self.video = cv.VideoCapture(0, cv.CAP_DSHOW)
