@@ -157,6 +157,7 @@ def handleLogin(request):
 def handleLogout(request):
 	logout(request)
 	messages.success(request, "Successfully Logged Out")
+	print(messages.success(request, "Successfully Logged Out"))
 	return redirect('Homepage')
 
 	return HttpResponse('handleLogout') 

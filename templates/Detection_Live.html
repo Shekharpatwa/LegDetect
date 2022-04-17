@@ -6,15 +6,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <link rel="stylesheet" media="screen and (max-width: 412px" href="{% static 'phone.css' %}">
 
-
-<h1 style="text-align: center;">Live Body DETECTION Using Webcam </h1>
-
+<br>
+<br><br>
 
 <div style="justify-content: center; display: flex; margin-top: 30px;">
     <button id="btndetect" class="btn btn-success" >Start Video</button> 
     {% comment %} <img src="{% url 'video_feed' %}"> {% endcomment %}
 </div>
 <br><br>
+<h1 style="text-align: center;">Live Body Detection Using Webcam </h1>
 <div class="container detectform detectform">
     <h2>For Detection fill the details </h2>
     <form method="POST" action="/Detection_Live">
@@ -27,12 +27,12 @@
 
         <div class="mb-3">
             <label class="form-label" for="Langle">Left Leg angle: </label>
-            <input class="form-control" type="number" id="Langle" name="Langle" placeholder="Enter left leg angle" required />
+            <input class="form-control" type="number" id="Langle" name="Langle" placeholder="Enter the angle shown on the left knee" required />
         </div>
 
         <div class="mb-3">
             <label class="form-label" for="Rangle">Right Leg angle: </label>
-            <input class="form-control" type="number" id="Rangle" name="Rangle" placeholder="Enter Right leg angle" required />
+            <input class="form-control" type="number" id="Rangle" name="Rangle" placeholder="Enter the angle shown on the right knee" required />
         </div>
         <div>
             <b> Enter Date of Birth: <input type=date id = "DOB"> </b>  
@@ -137,17 +137,18 @@
         {
             return document.getElementById("LiveRes2").innerHTML = "Its Not Normal In this age, You need to consult a doctor"  
         }
-                
+             
+        else if (((age >= 19) && ((l && r)< 175)))
+        {
+            return document.getElementById("imgRes2").innerHTML = " You need to consult a doctor"
+        } 
+        else if(((age >= 19) && ((l && r)> 190)))
+        {
+            return document.getElementById("imgRes2").innerHTML = " You need to consult a doctor "
+        }
+        
         }  
     }  
 </script>
 
-<footer> 
-    <div class="footer fixed-bottom ">
-      <center>
-        <label for="phone no" class="form-label"><h4>Contact us on: <u>9324170787</u> , <u>9324599096</u>  &nbsp;&nbsp;  | </h4></label>  &nbsp;&nbsp; 
-        <label for="emailid" class="form-label"> <h4>Email ID: <u> legdetect1229@gmail.com</u></h4> </label>
-      </center>
-    </div>
-  </footer>
 {% endblock body %}

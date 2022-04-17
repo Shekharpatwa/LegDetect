@@ -45,7 +45,7 @@ a{
 /* footer  */
 .footer{
   /* background: aqua; */
-  color: rgb(219, 9, 9);
+  /* color: rgb(219, 9, 9); */
   background:linear-gradient(70deg,blue,pink);
   text-shadow: 2px 2px #8c9fc4;
 }

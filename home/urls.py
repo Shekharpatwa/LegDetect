@@ -9,7 +9,7 @@ from .import views
 urlpatterns = [
     path('', views.Homepage, name='Homepage'),
     path('Homepage.html',views.Homepage,name='Homepage'),
-    # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.jpg'))),
+    # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
     path('video_feed', views.video_feed, name='video_feed'),
     path('image_feed', views.image_feed, name='image_feed'),
 
